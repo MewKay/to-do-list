@@ -11,9 +11,5 @@ myProject.addToDo(
   ToDo("Eat Bread"),
   ToDo("Dance yeah, i know to code wooo!")
   );
-
-myProject.list.forEach(toDo => console.log(toDo.title));
-
-myProject.removeToDoWithTitle("Get Up","Eat breakfast");
-
-myProject.list.forEach(toDo => console.log(toDo.title));
+  
+console.log(myProject.list);

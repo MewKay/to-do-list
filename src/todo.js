@@ -1,7 +1,5 @@
-const ToDo = (title) => {
+const ToDo = (title,dueDate = "Today",priority = "Low") => {
   let _description;
-  let _dueDate;
-  let _priority;
  
   return {
     get title() {
@@ -14,16 +12,16 @@ const ToDo = (title) => {
       _description = value;
     },
     get dueDate() {
-      return _dueDate;
+      return dueDate;
     },
     set dueDate(value) {
-      _dueDate = value;
+      dueDate = value;
     },
     get priority() {
-      return _priority;
+      return priority;
     },
     set priority(value) {
-      _priority = value;
+      priority = value;
     }
   }
 }
