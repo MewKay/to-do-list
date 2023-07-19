@@ -1,4 +1,4 @@
-const Project = () => {
+const Project = (name = "Default") => {
   let _toDoList = [];
 
   const addToDo = (...toDo) => {
@@ -14,6 +14,9 @@ const Project = () => {
   return {
     get list() {
       return _toDoList;
+    },
+    get name() {
+      return name;
     },
     addToDo,
     removeToDoWithTitle,
