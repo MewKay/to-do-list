@@ -1,6 +1,11 @@
 const ToDo = (title,dueDate = "Today",priority = "Low") => {
   let _description;
- 
+  let _taskDone = false;
+  
+  const changeToDoStatus = () => {
+    _taskDone = !_taskDone;
+  }
+
   return {
     get title() {
       return title;
@@ -22,7 +27,8 @@ const ToDo = (title,dueDate = "Today",priority = "Low") => {
     },
     set priority(value) {
       priority = value;
-    }
+    },
+    changeToDoStatus
   }
 }
 
