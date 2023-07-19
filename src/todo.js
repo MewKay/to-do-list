@@ -1,4 +1,6 @@
-const ToDo = (title,dueDate = "Today",priority = "Low") => {
+import { Priority } from "./priority";
+
+const ToDo = (title,dueDate = "Today", priority = Priority.LOW) => {
   let _description;
   let _taskDone = false;
   
