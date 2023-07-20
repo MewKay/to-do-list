@@ -8,6 +8,38 @@
 
 /* -- Layout -- */
 
+body {
+  height: 100vh;
+  display: grid;
+  grid: 
+    "header header" 10%
+    "sidebar main" 90% /
+    1fr 4fr;
+}
 
+
+header {
+  grid-area: header;
+}
+
+#sidebar {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
+}
 
 /* -- Style -- */
+
+header {
+  background-color: var(--primary);
+}
+
+#sidebar {
+  background-color: var(--secondary);
+}
+
+main {
+  background-color: var(--background);
+}
