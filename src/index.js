@@ -2,6 +2,7 @@ import "./reset.css";
 import "./style.css";
 import { ToDo } from "./todo";
 import { Project } from "./project";
+import { Priority } from "./priority";
 
 const myProject = Project();
 
@@ -12,4 +13,10 @@ myProject.addToDo(
   ToDo("Dance yeah, i know to code wooo!")
   );
   
-console.log(myProject.list);
+  myProject.list[0].priority = "";
+  myProject.list[1].priority = Priority.HIGH;
+  myProject.list[2].priority = Priority.MEDIUM;
+  myProject.list[3].priority = Priority.LOW;
+  
+  myProject.list.forEach(element => 
+    console.log(element.priority))
