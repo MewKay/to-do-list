@@ -1,9 +1,11 @@
-const Content = () => {
+const createContent = () => {
   const container = document.createElement("main");
-  
+
   return container;
 }
 
+const content = createContent();
+
 export {
-  Content
+  content
 };

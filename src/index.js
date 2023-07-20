@@ -1,10 +1,10 @@
 import "./components/styles/reset.css";
 import "./components/styles/style.css";
-import { Header } from "./components/ui/header";
-import { Sidebar } from "./components/ui/sidebar";
-import { Content } from "./components/ui/content";
+import { header } from "./components/ui/header";
+import { sidebar } from "./components/ui/sidebar";
+import { content } from "./components/ui/content";
 
 
-document.body.appendChild(Header());
-document.body.appendChild(Sidebar());
-document.body.appendChild(Content());
+document.body.appendChild(header);
+document.body.appendChild(sidebar);
+document.body.appendChild(content);

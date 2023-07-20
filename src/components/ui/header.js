@@ -4,12 +4,14 @@ const createAppTitle = () => {
   return appTitle;
 }
 
-const Header = () => {
+const createHeader = () => {
   const container = document.createElement("header");
   container.appendChild(createAppTitle());
   return container;
 }
 
+const header = createHeader();
+
 export {
-  Header
+  header
 };
