@@ -1,4 +1,4 @@
-import { Priority, checkIfPriorityValid } from "./priority";
+import { Priority, checkIfPriorityValid } from "../priority";
 import { isValid } from "date-fns";
 
 const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
