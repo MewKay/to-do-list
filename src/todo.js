@@ -33,9 +33,9 @@ const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
       return priority;
     },
     set priority(value) {
-      if(checkIfPriorityValid(value))
-        priority = value;
-      else return console.log(NOT_VALID_PRIORITY_VALUE_MESSAGE)
+      if(!checkIfPriorityValid(value))
+        return console.log(NOT_VALID_PRIORITY_VALUE_MESSAGE)
+      priority = value;
     },
     get completionCheck() {
       return _taskDone;
