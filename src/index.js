@@ -11,12 +11,8 @@ myProject.addToDo(
   ToDo("Eat breakfast"),
   ToDo("Eat Bread"),
   ToDo("Dance yeah, i know to code wooo!")
-  );
-  
-  myProject.list[0].priority = "";
-  myProject.list[1].priority = Priority.HIGH;
-  myProject.list[2].priority = Priority.MEDIUM;
-  myProject.list[3].priority = Priority.LOW;
-  
-  myProject.list.forEach(element => 
-    console.log(element.priority))
+);
+
+myProject.list[1].dueDate = "Bite"
+
+myProject.list.forEach( element => console.log(element.dueDate))
