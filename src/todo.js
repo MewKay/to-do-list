@@ -7,7 +7,7 @@ const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
   const NOT_VALID_PRIORITY_VALUE_MESSAGE = "Not a valid priority value.";
   const NOT_VALID_DATE_VALUE_MESSAGE = "Not a valid date."; 
 
-  const changeToDoStatus = () => {
+  const toggleCompletionStatus = () => {
     _taskDone = !_taskDone;
   }
 
@@ -37,7 +37,10 @@ const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
         priority = value;
       else return console.log(NOT_VALID_PRIORITY_VALUE_MESSAGE)
     },
-    changeToDoStatus
+    get completionCheck() {
+      return _taskDone;
+    },
+    toggleCompletionStatus
   }
 }
 
