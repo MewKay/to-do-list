@@ -1,0 +1,7 @@
+const Content = () => {
+
+}
+
+export {
+  Content
+};
