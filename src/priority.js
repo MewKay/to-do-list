@@ -4,6 +4,14 @@ const Priority = Object.freeze({
   LOW : "Negligible"
 });
 
+const checkIfPriorityValid = (value) => {
+  for(let key in Priority) 
+    if(Priority[key] === value)
+      return true;
+  return false;
+}
+
 export {
-  Priority
+  Priority,
+  checkIfPriorityValid
 };

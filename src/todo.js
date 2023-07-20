@@ -1,4 +1,4 @@
-import { Priority } from "./priority";
+import { Priority, checkIfPriorityValid } from "./priority";
 import { isValid } from "date-fns";
 
 const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
@@ -9,13 +9,6 @@ const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
 
   const changeToDoStatus = () => {
     _taskDone = !_taskDone;
-  }
-  
-  const checkIfPriorityValid = (value) => {
-    for(let key in Priority) 
-      if(Priority[key] === value)
-        return true;
-    return false;
   }
 
   return {

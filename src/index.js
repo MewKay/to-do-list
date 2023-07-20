@@ -13,6 +13,6 @@ myProject.addToDo(
   ToDo("Dance yeah, i know to code wooo!")
 );
 
-myProject.list[1].dueDate = "Bite"
+myProject.list[1].priority = "Priority.HIGH";
 
-myProject.list.forEach( element => console.log(element.dueDate))
+myProject.list.forEach( element => console.log(element.priority))
