@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700&display=swap');
+
 :root {
+  --font-heading: "Raleway", sans-serif;
   --text: #ffffff;
   --background: #050505;
   --primary: #1de598;
@@ -42,4 +45,10 @@ header {
 
 main {
   background-color: var(--background);
+}
+
+/* --- Header --- */
+
+header > h1 {
+  font-family: var(--font-heading);
 }
