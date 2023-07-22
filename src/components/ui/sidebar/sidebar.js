@@ -1,3 +1,4 @@
+import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
 import { inbox } from "./inbox";
 
 const createSidebar = () => {
@@ -5,7 +6,7 @@ const createSidebar = () => {
   container.id = "sidebar";
 
   container.appendChild(inbox);
-
+  container.appendChild(highlightedTodos);
   return container;
 }
 
