@@ -1,7 +1,7 @@
 import "./components/styles/reset.css";
 import "./components/styles/style.css";
 import { header } from "./components/ui/header";
-import { sidebar } from "./components/ui/sidebar";
+import { sidebar } from "./components/ui/sidebar/sidebar";
 import { content } from "./components/ui/content";
 
 
