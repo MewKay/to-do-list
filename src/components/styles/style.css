@@ -58,6 +58,7 @@ main {
 /* --- Header --- */
 
 header > h1 {
+  color: var(--background);
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: bold;
