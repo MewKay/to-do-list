@@ -1,5 +1,6 @@
 import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
 import { inbox } from "./inbox";
+import { projects } from "./projects/projects";
 
 const createSidebar = () => {
   const container = document.createElement("div");
@@ -7,6 +8,8 @@ const createSidebar = () => {
 
   container.appendChild(inbox);
   container.appendChild(highlightedTodos);
+  container.appendChild(projects);
+
   return container;
 }
 
