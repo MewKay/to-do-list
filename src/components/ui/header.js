@@ -1,3 +1,5 @@
+import { createContainer } from "./createContainer";
+
 const createAppTitle = () => {
   const appTitle = document.createElement("h1");
   appTitle.innerText = "My To-do list";
@@ -5,8 +7,8 @@ const createAppTitle = () => {
 }
 
 const createHeader = () => {
-  const container = document.createElement("header");
-  container.appendChild(createAppTitle());
+  const container = createContainer("header", createAppTitle());
+
   return container;
 }
 

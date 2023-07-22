@@ -1,14 +1,15 @@
+import { createContainer } from "../createContainer";
 import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
 import { inbox } from "./inbox";
 import { projects } from "./projects/projects";
 
 const createSidebar = () => {
-  const container = document.createElement("div");
-  container.id = "sidebar";
+  const container = createContainer("div",
+    inbox,
+    highlightedTodos,
+    projects);
 
-  container.appendChild(inbox);
-  container.appendChild(highlightedTodos);
-  container.appendChild(projects);
+  container.id = "sidebar";
 
   return container;
 }

@@ -1,5 +1,7 @@
+import { createContainer } from "./createContainer";
+
 const createContent = () => {
-  const container = document.createElement("main");
+  const container = createContainer("main");
 
   return container;
 }
