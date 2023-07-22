@@ -1,5 +1,8 @@
+import { createContainer } from "../../createContainer";
+
 const createTextThisWeek = () => {
-  const text = document.createElement("p");
+  const text = createContainer("p");
+  
   text.id = "this-week";
   text.innerText = "This Week";
 
@@ -7,9 +10,7 @@ const createTextThisWeek = () => {
 }
 
 const createitemThisWeek = () => {
-  const item = document.createElement("li");
-  
-  item.appendChild(createTextThisWeek());
+  const item = createContainer("li",createTextThisWeek());
 
   return item;
 }

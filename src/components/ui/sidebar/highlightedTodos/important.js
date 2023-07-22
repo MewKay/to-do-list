@@ -1,5 +1,8 @@
+import { createContainer } from "../../createContainer";
+
 const createTextImportant = () => {
-  const text = document.createElement("p");
+  const text = createContainer("p");
+
   text.id = "important";
   text.innerText = "Important";
 
@@ -7,9 +10,7 @@ const createTextImportant = () => {
 }
 
 const createitemImportant = () => {
-  const item = document.createElement("li");
-
-  item.appendChild(createTextImportant());
+  const item = createContainer("li",createTextImportant());
 
   return item;
 }

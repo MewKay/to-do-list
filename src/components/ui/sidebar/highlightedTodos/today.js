@@ -1,5 +1,8 @@
+import { createContainer } from "../../createContainer";
+
 const createTextToday = () => {
-  const text = document.createElement("p");
+  const text = createContainer("p");
+
   text.id = "today";
   text.innerText = "Today";
 
@@ -7,9 +10,7 @@ const createTextToday = () => {
 }
 
 const createitemToday = () => {
-  const item = document.createElement("li");
-
-  item.appendChild(createTextToday());
+  const item = createContainer("li", createTextToday());
 
   return item;
 }
