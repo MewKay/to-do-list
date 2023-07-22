@@ -1,5 +1,8 @@
+import { createContainer } from "../../createContainer";
+
 const createProjectsContainer = () => {
-  const container = document.createElement("div");
+  const container = createContainer("div");
+
   container.id = "projects";
 
   return container;
