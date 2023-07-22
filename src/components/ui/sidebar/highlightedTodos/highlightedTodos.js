@@ -6,7 +6,7 @@ const createList = () => {
 }
 
 const createhighlightedTodoContainer = () => {
-  const container = docuement.createElement("div");
+  const container = document.createElement("div");
   container.id = "highlighted-todos";
 
   container.appendChild(createList());
