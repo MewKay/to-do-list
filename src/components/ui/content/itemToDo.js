@@ -7,7 +7,9 @@ const createToDoTitle = (toDo) => {
 }
 
 const createItemToDo = (toDo) => {
-  createToDoTitle(toDo);
+  const item = createContainer("li");
+  item.appendChild(createToDoTitle(toDo));
+  return item;
 }
 
 export {
