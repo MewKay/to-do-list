@@ -51,6 +51,19 @@ header {
   gap: 2rem;
 }
 
+#highlighted-todos > ul {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+#projects {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
 /* -- Style -- */
 
 body {
@@ -91,8 +104,14 @@ header > h1 {
   letter-spacing: 2px;
 }
 
-#highlighted-todos > ul {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
+#highlighted-todos p{
+  letter-spacing: 1px;
 }
+
+#projects {
+  border-top: 2px solid var(--primary);
+}
+
+#projects p {
+  font-size: .9rem;
+} 
