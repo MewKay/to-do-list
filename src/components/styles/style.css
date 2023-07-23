@@ -79,3 +79,10 @@ header > h1 {
   font-weight: bold;
   letter-spacing: -1px;
 }
+
+/* --- Sidebar --- */
+
+#inbox > p {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
