@@ -1,6 +1,13 @@
+import { pubSub } from "../../pubsub";
+import { inboxContentData } from "../../data/inboxContent";
+
 const createInboxText = () => {
   const text = document.createElement("p");
   text.innerText = "Inbox";
+
+  text.addEventListener("click", () => {
+    pubSub.publish("contentUpdated", inboxContentData);
+  })
 
   return text;
 }

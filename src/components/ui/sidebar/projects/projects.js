@@ -1,5 +1,6 @@
 import { createContainer } from "../../createContainer";
 import { pubSub } from "../../../pubsub";
+import { projectContentData } from "../../../data/projectContent";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -15,6 +16,10 @@ const renderProjectList = (list) => {
   list.forEach( element => {
     const projectTitle = createContainer("p");
     projectTitle.innerText = element.name;
+
+    projectTitle.addEventListener("click", () => {
+      pubSub.publish("contentUpdated", projectContentData(element));
+    })
 
     const div = createContainer("div", projectTitle);
     div.classList.add("project");
