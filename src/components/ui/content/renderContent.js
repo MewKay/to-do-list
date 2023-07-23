@@ -1,5 +1,6 @@
 import { createContainer } from "../createContainer";
 import { content } from "./content"
+import { createItemToDo } from "./itemToDo";
 
 const createTitleContainer = (title) => {
   const titleContainer = createContainer("h1");
@@ -12,7 +13,7 @@ const createListContainer = (list) => {
   const listContainer = createContainer("ul");
   listContainer.id = "content-list";
 
-  list.forEach(element => listContainer.appendChild(ItemToDo(element)));
+  list.forEach(element => listContainer.appendChild(createItemToDo(element)));
 
   return listContainer;
 }
