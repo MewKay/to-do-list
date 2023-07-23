@@ -1,8 +1,11 @@
+import { pubSub } from "../pubsub";
+
 const createProjectList = () => {
   let _list = [];
   
   const addProject = (...Project) => {
     _list.push(...Project);
+    pubSub.publish("projectListUpdated",_list);
   }
 
   const removeProjectWithName = (...ProjectName) => {

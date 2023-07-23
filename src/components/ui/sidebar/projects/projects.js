@@ -1,5 +1,5 @@
-import { projectList } from "../../../app-logic/projectList";
 import { createContainer } from "../../createContainer";
+import { pubSub } from "../../../pubsub";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -9,12 +9,10 @@ const createProjectsContainer = () => {
   return container;
 }
 
-const projects = createProjectsContainer();
-
-const renderProjectList = () => {
+const renderProjectList = (list) => {
   projects.innerText = "";
 
-  projectList.list.forEach( element => {
+  list.forEach( element => {
     const projectTitle = createContainer("h4");
     projectTitle.innerText = element.name;
 
@@ -28,8 +26,10 @@ const renderProjectList = () => {
   })
 }
 
+pubSub.subscribe("projectListUpdated", renderProjectList);
+
+const projects = createProjectsContainer();
 
 export {
-  projects,
-  renderProjectList
+  projects
 };
