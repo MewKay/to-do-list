@@ -46,6 +46,7 @@ header {
 
 #sidebar {
   padding: 2rem 1.5rem;
+  min-width: 100px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -62,6 +63,13 @@ header {
   display: flex;
   flex-direction: column;
   gap: .7rem;
+}
+
+#inbox,
+#highlighted-todos li,
+.project {
+  padding: .2rem .5rem;
+  border-radius: 3px;
 }
 
 /* -- Style -- */
@@ -115,3 +123,9 @@ header > h1 {
 #projects p {
   font-size: .9rem;
 } 
+
+#inbox:hover,
+#highlighted-todos li:hover,
+.project:hover {
+  background-color: rgba(0, 0, 0, .3);
+}
