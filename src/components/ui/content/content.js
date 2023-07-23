@@ -1,4 +1,4 @@
-import { createContainer } from "./createContainer";
+import { createContainer } from "../createContainer";
 
 const createContent = () => {
   const container = createContainer("main");

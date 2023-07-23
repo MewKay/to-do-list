@@ -118,6 +118,7 @@ header > h1 {
 
 #projects {
   border-top: 2px solid var(--primary);
+  overflow: auto;
 }
 
 #projects p {
