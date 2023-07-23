@@ -65,9 +65,7 @@ header {
   gap: .5rem;
 }
 
-#inbox,
-#highlighted-todos li,
-.project {
+.nav-item {
   padding: .3rem .5rem;
   border-radius: 3px;
 }
@@ -108,12 +106,17 @@ header > h1 {
   background-color: rgba(0, 0, 0, .3);
 }
 
+.nav-item.selected {
+  border-left: 3px solid var(--accent);
+  background-color: rgba(0, 0, 0, .3);
+}
+
 #inbox > p {
   font-size: 1.3rem;
   letter-spacing: 2px;
 }
 
-#highlighted-todos p{
+#highlighted-todos p {
   letter-spacing: 1px;
 }
 

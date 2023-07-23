@@ -2,6 +2,8 @@ import { createContainer } from "../createContainer";
 import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
 import { inbox } from "./inbox";
 import { projects } from "./projects/projects";
+import { pubSub } from "../../pubsub";
+import { addClassSelected } from "./addClassSelected";
 
 const createSidebar = () => {
   const container = createContainer("div",
@@ -15,6 +17,8 @@ const createSidebar = () => {
 }
 
 const sidebar = createSidebar();
+
+pubSub.subscribe("projectListUpdated", addClassSelected); 
 
 export {
   sidebar

@@ -18,7 +18,6 @@ const renderProjectList = (list) => {
     projectTitle.innerText = element.name;
 
     const div = createContainer("div", projectTitle);
-    div.classList.add("project");
     div.classList.add("nav-item");
 
     div.addEventListener("click", () => {
