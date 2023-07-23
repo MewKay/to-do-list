@@ -1,18 +1,21 @@
 import { isThisWeek } from "date-fns";
 import { projectList } from "../app-logic/projectList";
 import { ContentData } from "./contentData";
+import { pubSub } from "../pubsub";
+
+const thisWeekContentData = ContentData("This Week",[]);
 
 const thisWeekToDoList = () => {
   let listToDo = [];
   projectList.list.forEach( project => 
     project.list.forEach( toDo => {
       if(isThisWeek(toDo.dueDate))
-        list.push(toDo);
+        listToDo.push(toDo);
     }));
-  return listToDo;
+  thisWeekContentData.toDoList = listToDo;
 }
 
-const thisWeekContentData = ContentData("This Week",thisWeekToDoList());
+pubSub.subscribe("projectListUpdated",thisWeekToDoList);
 
 export {
   thisWeekContentData
