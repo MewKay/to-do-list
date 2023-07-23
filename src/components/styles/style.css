@@ -55,20 +55,20 @@ header {
 #highlighted-todos > ul {
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  gap: .3rem;
 }
 
 #projects {
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: .7rem;
+  gap: .5rem;
 }
 
 #inbox,
 #highlighted-todos li,
 .project {
-  padding: .2rem .5rem;
+  padding: .3rem .5rem;
   border-radius: 3px;
 }
 
