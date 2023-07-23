@@ -13,13 +13,10 @@ const renderProjectList = (list) => {
   projects.innerText = "";
 
   list.forEach( element => {
-    const projectTitle = createContainer("h4");
+    const projectTitle = createContainer("p");
     projectTitle.innerText = element.name;
 
-    const toDoList = createContainer("div");
-    toDoList.classList.add("to-do-list");
-    
-    const div = createContainer("div", projectTitle, toDoList);
+    const div = createContainer("div", projectTitle);
     div.classList.add("project");
 
     projects.appendChild(div);
