@@ -17,12 +17,13 @@ const renderProjectList = (list) => {
     const projectTitle = createContainer("p");
     projectTitle.innerText = element.name;
 
-    projectTitle.addEventListener("click", () => {
-      pubSub.publish("contentUpdated", projectContentData(element));
-    })
-
     const div = createContainer("div", projectTitle);
     div.classList.add("project");
+    div.classList.add("nav-item");
+
+    div.addEventListener("click", () => {
+      pubSub.publish("contentUpdated", projectContentData(element));
+    })
 
     projects.appendChild(div);
   })

@@ -11,6 +11,7 @@ const createTextImportant = () => {
 
 const createitemImportant = () => {
   const item = createContainer("li",createTextImportant());
+  item.classList.add("nav-item");
 
   return item;
 }

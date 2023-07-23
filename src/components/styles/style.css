@@ -103,8 +103,9 @@ header > h1 {
 
 /* --- Sidebar --- */
 
-#sidebar p:hover {
+.nav-item:hover {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, .3);
 }
 
 #inbox > p {
@@ -124,9 +125,3 @@ header > h1 {
 #projects p {
   font-size: .9rem;
 } 
-
-#inbox:hover,
-#highlighted-todos li:hover,
-.project:hover {
-  background-color: rgba(0, 0, 0, .3);
-}

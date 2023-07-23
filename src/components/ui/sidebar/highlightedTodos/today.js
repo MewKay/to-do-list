@@ -11,6 +11,7 @@ const createTextToday = () => {
 
 const createitemToday = () => {
   const item = createContainer("li", createTextToday());
+  item.classList.add("nav-item");
 
   return item;
 }

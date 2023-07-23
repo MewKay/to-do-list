@@ -11,6 +11,7 @@ const createTextThisWeek = () => {
 
 const createitemThisWeek = () => {
   const item = createContainer("li",createTextThisWeek());
+  item.classList.add("nav-item");
 
   return item;
 }
