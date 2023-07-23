@@ -82,6 +82,10 @@ header > h1 {
 
 /* --- Sidebar --- */
 
+#sidebar p:hover {
+  cursor: pointer;
+}
+
 #inbox > p {
   font-size: 1.3rem;
   letter-spacing: 2px;
