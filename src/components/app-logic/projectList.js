@@ -1,4 +1,4 @@
-const ProjectList = () => {
+const createProjectList = () => {
   let _list = [];
   
   const addProject = (...Project) => {
@@ -20,6 +20,8 @@ const ProjectList = () => {
   };
 }
 
+const projectList = createProjectList();
+
 export {
-  ProjectList
+  projectList
 };
