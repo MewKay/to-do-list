@@ -2,6 +2,7 @@
 
 :root {
   --font-heading: "Raleway", sans-serif;
+  --font-text: "Roboto", sans-serif;
   --text: #ffffff;
   --background: #050505;
   --primary: #1de598;
@@ -42,6 +43,11 @@ header {
 }
 
 /* -- Style -- */
+
+body {
+  color: var(--text);
+  font-family: var(--font-text);
+}
 
 header {
   background-color: var(--primary);
