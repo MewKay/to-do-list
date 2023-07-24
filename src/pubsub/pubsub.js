@@ -13,7 +13,7 @@ const createPubSub = () => {
     events[eventName] = events[eventName].filter(functionToDelete => functionToDelete !== functionToCall);
   }
 
-  const publish = (eventName, data) => {
+  const publish = (eventName, data = undefined) => {
     if(!events[eventName])
       return;
 
