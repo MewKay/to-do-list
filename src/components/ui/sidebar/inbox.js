@@ -13,6 +13,7 @@ const createInboxContainer = () => {
   const container = document.createElement("div");
   container.id = "inbox";
   container.classList.add("nav-item");
+  container.classList.add("selected");
 
   container.addEventListener("click", () => {
     pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
