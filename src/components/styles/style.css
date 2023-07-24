@@ -167,3 +167,11 @@ main ul {
 main li:not(:last-child) {
   border-bottom: 2px solid var(--secondary);
 }
+
+.done * {
+  opacity: .4;
+}
+
+.done label {
+  text-decoration: line-through;
+}

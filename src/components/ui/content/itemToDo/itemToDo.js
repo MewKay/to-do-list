@@ -33,9 +33,9 @@ const ItemToDo = (toDo) => {
 
   const renderItem = () => {
     if(toDo.completionCheck)
-      _label.style.textDecoration = "line-through";
+      _container.classList.add("done");
     if(!toDo.completionCheck)
-      _label.style.textDecoration = "none"; 
+      _container.classList.remove("done"); 
 
     _container.appendChild(_checkbox);
     _container.appendChild(_label);
