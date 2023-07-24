@@ -74,6 +74,8 @@ header {
 
 main {
   padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 main h1 {
@@ -81,8 +83,13 @@ main h1 {
 }
 
 main ul {
-  padding: 0 1rem;
-  padding-top: 2rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main li {
+  padding: 1.5rem 1rem;
 }
 
 /* -- Style -- */
@@ -154,4 +161,9 @@ main h1 {
 
 main ul {
   border-top: 2px solid var(--primary);
+  overflow: auto;
+}
+
+main li:not(:last-child) {
+  border-bottom: 2px solid var(--secondary);
 }
