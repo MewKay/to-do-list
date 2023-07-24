@@ -12,7 +12,6 @@ const todayToDoList = () => {
     project.list.forEach( toDo => {
       if(isToday(toDo.dueDate))
         listToDo.push(toDo);
-        console.log(toDo.dueDate);
     }));
   todayContentData.toDoList = listToDo;
 }
