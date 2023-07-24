@@ -1,6 +1,7 @@
 import { Project } from "./components/app-logic/project";
 import { projectList } from "./components/app-logic/projectList";
 import { ToDo } from "./components/app-logic/todo";
+import { inboxProject } from "./components/data/inboxContent";
 import { Priority } from "./components/priority";
 import { addDays, addWeeks } from "date-fns";
 
@@ -19,4 +20,6 @@ export const addDummyContent = () => {
   );
 
   projectList.addProject(project1,project2);
+
+  inboxProject.addToDo(ToDo("A second thing to do", addDays(new Date, 1), Priority.HIGH));
 }
