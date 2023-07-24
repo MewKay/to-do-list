@@ -70,6 +70,21 @@ header {
   border-radius: 3px;
 }
 
+/* --- Content --- */ 
+
+main {
+  padding: 2rem 4rem;
+}
+
+main h1 {
+  margin-bottom: 2rem;
+}
+
+main ul {
+  padding: 0 1rem;
+  padding-top: 2rem;
+}
+
 /* -- Style -- */
 
 body {
@@ -128,3 +143,15 @@ header > h1 {
 #projects p {
   font-size: .9rem;
 } 
+
+/* --- Content --- */
+
+main h1 {
+  font-family: var(--font-heading);
+  font-size: 2.7rem;
+  letter-spacing: 2px;
+}
+
+main ul {
+  border-top: 2px solid var(--primary);
+}
