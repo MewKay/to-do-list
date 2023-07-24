@@ -16,6 +16,7 @@ const thisWeekToDoList = () => {
   thisWeekContentData.toDoList = listToDo;
 }
 
+pubSub.subscribe(Events.TO_DO_LIST_UPDATE,thisWeekToDoList);
 pubSub.subscribe(Events.PROJECT_LIST_UPDATE,thisWeekToDoList);
 
 export {

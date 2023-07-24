@@ -16,6 +16,7 @@ const todayToDoList = () => {
   todayContentData.toDoList = listToDo;
 }
 
+pubSub.subscribe(Events.TO_DO_LIST_UPDATE,todayToDoList);
 pubSub.subscribe(Events.PROJECT_LIST_UPDATE,todayToDoList);
 
 export {

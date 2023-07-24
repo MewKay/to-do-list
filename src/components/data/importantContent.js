@@ -16,7 +16,8 @@ const importantToDoList = () => {
   importantContentData.toDoList = listToDo;
 }
 
-pubSub.subscribe(Events.TO_DO_LIST_UPDATE,importantToDoList)
+pubSub.subscribe(Events.TO_DO_LIST_UPDATE,importantToDoList);
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE,importantToDoList);
 
 export {
   importantContentData

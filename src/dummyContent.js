@@ -20,6 +20,4 @@ export const addDummyContent = () => {
   );
 
   projectList.addProject(project1,project2);
-
-  inboxProject.addToDo(ToDo("A second thing to do", addDays(new Date, 1), Priority.HIGH));
 }
