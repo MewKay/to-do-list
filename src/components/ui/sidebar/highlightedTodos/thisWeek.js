@@ -1,6 +1,7 @@
 import { thisWeekContentData } from "../../../data/thisweekContent";
 import { createContainer } from "../../createContainer";
-import { pubSub } from "../../../pubsub";
+import { pubSub } from "../../../../pubsub/pubsub";
+import { Events } from "../../../../pubsub/eventsName";
 
 const createTextThisWeek = () => {
   const text = createContainer("p");
@@ -16,7 +17,7 @@ const createitemThisWeek = () => {
   item.classList.add("nav-item");
 
   item.addEventListener("click", () => {
-    pubSub.publish("contentUpdated", thisWeekContentData);
+    pubSub.publish(Events.CONTENT_UPDATE, thisWeekContentData);
   });
   
   return item;

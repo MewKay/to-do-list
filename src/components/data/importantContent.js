@@ -1,7 +1,8 @@
 import { Priority } from "../priority";
 import { projectList } from "../app-logic/projectList";
 import { ContentData } from "./contentData";
-import { pubSub } from "../pubsub";
+import { pubSub } from "../../pubsub/pubsub";
+import { Events } from "../../pubsub/eventsName";
 
 const importantContentData = ContentData("Important",[]);
 
@@ -15,7 +16,7 @@ const importantToDoList = () => {
   importantContentData.toDoList = listToDo;
 }
 
-pubSub.subscribe("projectListUpdated",importantToDoList)
+pubSub.subscribe(Events.TO_DO_LIST_UPDATE,importantToDoList)
 
 export {
   importantContentData

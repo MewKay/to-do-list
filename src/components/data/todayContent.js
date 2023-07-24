@@ -1,7 +1,8 @@
 import { isToday } from "date-fns";
 import { projectList } from "../app-logic/projectList";
 import { ContentData } from "./contentData";
-import { pubSub } from "../pubsub";
+import { pubSub } from "../../pubsub/pubsub";
+import { Events } from "../../pubsub/eventsName";
 
 const todayContentData = ContentData("Today",[]);
 
@@ -16,7 +17,7 @@ const todayToDoList = () => {
   todayContentData.toDoList = listToDo;
 }
 
-pubSub.subscribe("projectListUpdated",todayToDoList);
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE,todayToDoList);
 
 export {
   todayContentData

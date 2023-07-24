@@ -1,7 +1,8 @@
 import { isThisWeek } from "date-fns";
 import { projectList } from "../app-logic/projectList";
 import { ContentData } from "./contentData";
-import { pubSub } from "../pubsub";
+import { pubSub } from "../../pubsub/pubsub";
+import { Events } from "../../pubsub/eventsName";
 
 const thisWeekContentData = ContentData("This Week",[]);
 
@@ -15,7 +16,7 @@ const thisWeekToDoList = () => {
   thisWeekContentData.toDoList = listToDo;
 }
 
-pubSub.subscribe("projectListUpdated",thisWeekToDoList);
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE,thisWeekToDoList);
 
 export {
   thisWeekContentData

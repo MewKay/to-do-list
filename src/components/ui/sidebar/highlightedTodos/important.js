@@ -1,6 +1,7 @@
 import { importantContentData } from "../../../data/importantContent";
 import { createContainer } from "../../createContainer";
-import { pubSub } from "../../../pubsub";
+import { pubSub } from "../../../../pubsub/pubsub";
+import { Events } from "../../../../pubsub/eventsName";
 
 const createTextImportant = () => {
   const text = createContainer("p");
@@ -16,7 +17,7 @@ const createitemImportant = () => {
   item.classList.add("nav-item");
   
   item.addEventListener("click", () => {
-    pubSub.publish("contentUpdated", importantContentData);
+    pubSub.publish(Events.CONTENT_UPDATE, importantContentData);
   });
 
   return item;

@@ -1,8 +1,12 @@
+import { Events } from "../../pubsub/eventsName";
+import { pubSub } from "../../pubsub/pubsub";
+
 const Project = (name = "Default") => {
   let _toDoList = [];
 
   const addToDo = (...toDo) => {
     _toDoList.push(...toDo);
+    pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
 
   const removeToDoWithTitle = (...toDoTitles) => {

@@ -1,6 +1,7 @@
 import { todayContentData } from "../../../data/todayContent";
 import { createContainer } from "../../createContainer";
-import { pubSub } from "../../../pubsub";
+import { pubSub } from "../../../../pubsub/pubsub";
+import { Events } from "../../../../pubsub/eventsName";
 
 const createTextToday = () => {
   const text = createContainer("p");
@@ -16,7 +17,7 @@ const createitemToday = () => {
   item.classList.add("nav-item");
 
   item.addEventListener("click", () => {
-    pubSub.publish("contentUpdated", todayContentData);
+    pubSub.publish(Events.CONTENT_UPDATE, todayContentData);
   });
 
   return item;

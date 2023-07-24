@@ -1,4 +1,5 @@
-import { pubSub } from "../../pubsub";
+import { Events } from "../../../pubsub/eventsName";
+import { pubSub } from "../../../pubsub/pubsub";
 import { createContainer } from "../createContainer";
 import { renderContent } from "./renderContent";
 
@@ -9,7 +10,7 @@ const createContent = () => {
 
 const content = createContent();
 
-pubSub.subscribe("contentUpdated",renderContent);
+pubSub.subscribe(Events.CONTENT_UPDATE,renderContent);
 
 export {
   content

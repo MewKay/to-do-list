@@ -2,8 +2,9 @@ import { createContainer } from "../createContainer";
 import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
 import { inbox } from "./inbox";
 import { projects } from "./projects/projects";
-import { pubSub } from "../../pubsub";
+import { pubSub } from "../../../pubsub/pubsub";
 import { addClassSelected } from "./addClassSelected";
+import { Events } from "../../../pubsub/eventsName";
 
 const createSidebar = () => {
   const container = createContainer("div",
@@ -18,7 +19,7 @@ const createSidebar = () => {
 
 const sidebar = createSidebar();
 
-pubSub.subscribe("projectListUpdated", addClassSelected); 
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE, addClassSelected); 
 
 export {
   sidebar

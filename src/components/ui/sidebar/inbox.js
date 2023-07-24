@@ -1,4 +1,5 @@
-import { pubSub } from "../../pubsub";
+import { Events } from "../../../pubsub/eventsName";
+import { pubSub } from "../../../pubsub/pubsub";
 import { inboxContentData } from "../../data/inboxContent";
 
 const createInboxText = () => {
@@ -14,7 +15,7 @@ const createInboxContainer = () => {
   container.classList.add("nav-item");
 
   container.addEventListener("click", () => {
-    pubSub.publish("contentUpdated", inboxContentData);
+    pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
   })
 
   container.appendChild(createInboxText());

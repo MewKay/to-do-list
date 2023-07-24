@@ -1,7 +1,8 @@
 import { createContainer } from "../../createContainer";
-import { pubSub } from "../../../pubsub";
+import { pubSub } from "../../../../pubsub/pubsub";
 import { projectContentData } from "../../../data/projectContent";
 import { inbox } from "../inbox";
+import { Events } from "../../../../pubsub/eventsName";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -23,7 +24,7 @@ const renderProjectList = (list) => {
       div.classList.add("nav-item");
 
       div.addEventListener("click", () => {
-        pubSub.publish("contentUpdated", projectContentData(element));
+        pubSub.publish(Events.CONTENT_UPDATE, projectContentData(element));
       })
 
       projects.appendChild(div);
@@ -31,7 +32,7 @@ const renderProjectList = (list) => {
   })
 }
 
-pubSub.subscribe("projectListUpdated", renderProjectList);
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);
 
 const projects = createProjectsContainer();
 
