@@ -168,6 +168,10 @@ main li:not(:last-child) {
   border-bottom: 2px solid var(--secondary);
 }
 
+main li input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
 .done * {
   opacity: .4;
 }
