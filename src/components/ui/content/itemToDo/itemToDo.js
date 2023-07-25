@@ -3,7 +3,6 @@ import { Events } from "../../../../pubsub/eventsName";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { createContainer } from "../../createContainer";
 import { ButtonSection } from "./buttonSection/buttonSection";
-import { Status } from "./buttonSection/buttonsectionStatus";
 
 const createCheckBox = (toDo) => {
   const checkbox = createContainer("input");
@@ -33,7 +32,7 @@ const ItemToDo = (toDo) => {
   const _checkbox = createCheckBox(toDo);
   const _label = createToDoLabel(toDo.title);
   const _date = createDueDateDisplay(toDo.dueDate);
-  const _buttonSection = ButtonSection();
+  const _buttonSection = ButtonSection(toDo);
 
   const renderItem = () => {
     _container.innerText = "";
@@ -44,12 +43,10 @@ const ItemToDo = (toDo) => {
 
     if(toDo.completionCheck) {
       _container.classList.add("done");
-      _buttonSection.status = Status.TO_DO_COMPLETED;
       _buttonSection.render();
     }
     if(!toDo.completionCheck) {
-      _container.classList.remove("done"); 
-      _buttonSection.status = Status.DEFAULT;
+      _container.classList.remove("done");
       _buttonSection.render();
     }
   }

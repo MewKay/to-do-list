@@ -1,4 +1,4 @@
-import { createContainer } from "../../../createContainer";
+import { createContainer } from "../createContainer";
 
 const createConfirmButton = () => {
   const confirmButton = createContainer("button");
