@@ -3,6 +3,7 @@ import { pubSub } from "../../../../pubsub/pubsub";
 import { projectContentData } from "../../../data/projectContent";
 import { inbox } from "../inbox";
 import { Events } from "../../../../pubsub/eventsName";
+import { createIcon } from "../../createIcon";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -20,7 +21,7 @@ const renderProjectList = (list) => {
       const projectTitle = createContainer("p");
       projectTitle.innerText = element.name;
 
-      const div = createContainer("div", projectTitle);
+      const div = createContainer("div", createIcon("lists"), projectTitle);
       div.classList.add("nav-item");
 
       div.addEventListener("click", () => {

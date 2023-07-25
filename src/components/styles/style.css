@@ -68,6 +68,9 @@ header {
 .nav-item {
   padding: .3rem .5rem;
   border-radius: 3px;
+  display: flex;
+  gap: .3rem;
+  align-items: center;
 }
 
 /* --- Content --- */ 
@@ -113,12 +116,17 @@ main {
 
 /* --- Header --- */
 
-header > h1 {
+
+header * {
   color: var(--background);
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: -1px;
+}
+
+header .material-symbols-sharp {
+  font-size: 2.5rem;
 }
 
 /* --- Sidebar --- */
@@ -133,18 +141,30 @@ header > h1 {
   background-color: rgba(0, 0, 0, .3);
 }
 
-#inbox > p {
+#inbox p {
   font-size: 1.3rem;
   letter-spacing: 2px;
+}
+
+#inbox .material-symbols-sharp {
+  font-size: 1.5rem;
 }
 
 #highlighted-todos p {
   letter-spacing: 1px;
 }
 
+#highlighted-todos .material-symbols-sharp {
+  font-size: 1.35rem;
+}
+
 #projects {
   border-top: 2px solid var(--primary);
   overflow: auto;
+}
+
+#projects .material-symbols-sharp {
+  font-size: 1rem;
 }
 
 #projects p {

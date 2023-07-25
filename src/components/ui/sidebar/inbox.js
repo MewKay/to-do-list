@@ -1,6 +1,7 @@
 import { Events } from "../../../pubsub/eventsName";
 import { pubSub } from "../../../pubsub/pubsub";
 import { inboxContentData } from "../../data/inboxContent";
+import { createIcon } from "../createIcon"
 
 const createInboxText = () => {
   const text = document.createElement("p");
@@ -19,6 +20,7 @@ const createInboxContainer = () => {
     pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
   })
 
+  container.appendChild(createIcon("inbox"));
   container.appendChild(createInboxText());
 
   return container;

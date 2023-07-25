@@ -2,6 +2,7 @@ import { importantContentData } from "../../../data/importantContent";
 import { createContainer } from "../../createContainer";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { Events } from "../../../../pubsub/eventsName";
+import { createIcon } from "../../createIcon";
 
 const createTextImportant = () => {
   const text = createContainer("p");
@@ -13,7 +14,7 @@ const createTextImportant = () => {
 }
 
 const createitemImportant = () => {
-  const item = createContainer("li",createTextImportant());
+  const item = createContainer("li", createIcon("assignment_late"),createTextImportant());
   item.classList.add("nav-item");
   
   item.addEventListener("click", () => {

@@ -2,6 +2,7 @@ import { todayContentData } from "../../../data/todayContent";
 import { createContainer } from "../../createContainer";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { Events } from "../../../../pubsub/eventsName";
+import { createIcon } from "../../createIcon"
 
 const createTextToday = () => {
   const text = createContainer("p");
@@ -13,7 +14,7 @@ const createTextToday = () => {
 }
 
 const createitemToday = () => {
-  const item = createContainer("li", createTextToday());
+  const item = createContainer("li", createIcon("today") ,createTextToday());
   item.classList.add("nav-item");
 
   item.addEventListener("click", () => {

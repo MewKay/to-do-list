@@ -9,4 +9,4 @@ const createIcon = (iconName) => {
 
 export {
   createIcon
-}
+};

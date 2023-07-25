@@ -1,4 +1,5 @@
 import { createContainer } from "./createContainer";
+import { createIcon } from "./createIcon";
 
 const createAppTitle = () => {
   const appTitle = document.createElement("h1");
@@ -7,7 +8,7 @@ const createAppTitle = () => {
 }
 
 const createHeader = () => {
-  const container = createContainer("header", createAppTitle());
+  const container = createContainer("header", createIcon("done_all"), createAppTitle());
 
   return container;
 }
