@@ -65,25 +65,6 @@ const ItemToDo = (toDo) => {
   };
 }
 
-const defaultTaskButtons = {
-  details: (() => {
-  })(),
-  edit: (() => {
-  })(),
-  delete: (() => {
-
-  })(),
-}
-
-const confirmationDeleteButtons = {
-  yes: (() => {
-
-  })(),
-  no: (() => {
-
-  })()
-}
-
 const {edit, ...taskCheckedButtons} = defaultTaskButtons;
 
 export {
