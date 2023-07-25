@@ -2,7 +2,7 @@ import { createContainer } from "../../../createContainer";
 import { createIcon } from "../../../createIcon";
 
 const createEditButton = () => {
-  const editButton = createContainer("button", createIcon("edit_square"));
+  const editButton = createContainer("button", createIcon("edit"));
   return editButton;
 }
 

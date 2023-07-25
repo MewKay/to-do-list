@@ -37,10 +37,15 @@ const ItemToDo = (toDo) => {
   const _date = createDateDistanceDisplay(toDo.dueDate);
   const _buttonSection = ButtonSection(toDo);
 
+  const _labelSection = (() => {
+    const div = createContainer("div",_checkbox,_label);
+    div.classList.add("label-section");
+    return div;
+  })();
+
   const renderItem = () => {
     _container.innerText = "";
-    _container.appendChild(_checkbox);
-    _container.appendChild(_label);
+    _container.appendChild(_labelSection);
     _container.appendChild(_date);
     _container.appendChild(_buttonSection.container);
 

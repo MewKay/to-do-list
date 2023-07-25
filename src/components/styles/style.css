@@ -21,6 +21,9 @@ body {
     1fr 4fr;
 }
 
+button {
+  display: flex;
+}
 
 header {
   grid-area: header;
@@ -93,6 +96,22 @@ main ul {
 
 main li {
   padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.label-section {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.btn-section {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 
 /* -- Style -- */
@@ -100,6 +119,10 @@ main li {
 body {
   color: var(--text);
   font-family: var(--font-text);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 header {
@@ -198,4 +221,10 @@ main li input[type="checkbox"] {
 
 .done label {
   text-decoration: line-through;
+}
+
+main li button {
+  border: none;
+  background-color: var(--background);
+  color: var(--text);
 }
