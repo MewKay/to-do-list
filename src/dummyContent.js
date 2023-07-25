@@ -8,7 +8,7 @@ import { addDays, addWeeks } from "date-fns";
 export const addDummyContent = () => {
   const project1 = Project("Project 1");
   project1.addToDo(
-    ToDo("Todo1",new Date(),Priority.MEDIUM),
+    ToDo("Todo1",addDays(new Date(),1),Priority.MEDIUM),
     ToDo("Todo2",addDays(new Date(),20),Priority.HIGH),
     ToDo("Todo3",addWeeks(new Date(),4),Priority.LOW)
   );
@@ -16,7 +16,7 @@ export const addDummyContent = () => {
   const project2 = Project("Project 2");
   project2.addToDo(
     ToDo("Todo4",addDays(new Date(),10),Priority.MEDIUM),
-    ToDo("Todo5",new Date(),Priority.HIGH)
+    ToDo("Todo5",addDays(new Date(),2),Priority.HIGH)
   );
 
   projectList.addProject(project1,project2);
