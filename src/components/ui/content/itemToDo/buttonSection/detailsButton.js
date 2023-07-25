@@ -1,8 +1,8 @@
 import { createContainer } from "../../../createContainer";
+import { createIcon } from "../../../createIcon";
 
 const createDetailsButton = () => {
-  const detailsButton = createContainer("button");
-  detailsButton.innerText = "Details";
+  const detailsButton = createContainer("button", createIcon("description"));
   detailsButton.classList.add("btn-details");
   return detailsButton;
 }

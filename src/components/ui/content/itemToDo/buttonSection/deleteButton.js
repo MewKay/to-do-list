@@ -1,8 +1,8 @@
 import { createContainer } from "../../../createContainer";
+import { createIcon } from "../../../createIcon";
 
 const createDeleteButton = () => {
-  const deleteButton = createContainer("button");
-  deleteButton.innerText = "Delete";
+  const deleteButton = createContainer("button", createIcon("delete"));
   deleteButton.classList.add("delete-to-do");
   return deleteButton;
 }
