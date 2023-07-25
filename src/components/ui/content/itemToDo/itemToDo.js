@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { Events } from "../../../../pubsub/eventsName";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { createContainer } from "../../createContainer";
+import { ButtonSection } from "./buttonSection/buttonSection";
 
 const createCheckBox = (toDo) => {
   const checkbox = createContainer("input");
@@ -26,25 +27,19 @@ const createDueDateDisplay = (date) => {
   return dueDate;
 }
 
-const createButtonSection = () => {
-  const section = createContainer("div");
-  section.classList.add("button-section");
-  return section;
-}
-
 const ItemToDo = (toDo) => {
   const _container = createContainer("li");
   const _checkbox = createCheckBox(toDo);
   const _label = createToDoLabel(toDo.title);
   const _date = createDueDateDisplay(toDo.dueDate);
-  const _buttonSection = createButtonSection();
+  const _buttonSection = ButtonSection();
 
   const renderItem = () => {
     _container.innerText = "";
     _container.appendChild(_checkbox);
     _container.appendChild(_label);
     _container.appendChild(_date);
-    _container.appendChild(_buttonSection);
+    _container.appendChild(_buttonSection.container);
 
     if(toDo.completionCheck) {
       _container.classList.add("done");
@@ -64,8 +59,6 @@ const ItemToDo = (toDo) => {
     }
   };
 }
-
-const {edit, ...taskCheckedButtons} = defaultTaskButtons;
 
 export {
   ItemToDo
