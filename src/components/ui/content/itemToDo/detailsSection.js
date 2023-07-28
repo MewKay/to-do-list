@@ -42,10 +42,25 @@ const createDueDateDisplay = (toDo) => {
   return container; 
 }
 
+const createDescriptionDisplay = (toDo) => {
+  const text = createContainer("p");
+  text.innerText = "Description :";
+  text.classList.add("description-prefix");
+  
+  const descriptionText = createContainer("p");
+  descriptionText.innerText = toDo.description;
+  descriptionText.classList.add("description-content");
+  
+  const container = createContainer("div",text,descriptionText);
+  container.classList.add("description-display");
+  return container; 
+}
+
 const createDetailsSection = (toDo) => {
   const container = createContainer("div",
     createPriorityDisplay(toDo),
-    createDueDateDisplay(toDo));
+    createDueDateDisplay(toDo),
+    createDescriptionDisplay(toDo));
     container.classList.add("details");
   return container;
 }
