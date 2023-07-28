@@ -1,4 +1,4 @@
-import { createContainer } from "../../../createContainer"
+import { createContainer } from "../../../../createContainer"
 import { addDeleteButton } from "./deleteButton";
 import { addDetailsButton } from "./detailsButton";
 import { addEditButton } from "./editButton";

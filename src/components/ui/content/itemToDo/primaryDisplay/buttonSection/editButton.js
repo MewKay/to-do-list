@@ -1,5 +1,5 @@
-import { createContainer } from "../../../createContainer";
-import { createIcon } from "../../../createIcon";
+import { createContainer } from "../../../../createContainer";
+import { createIcon } from "../../../../createIcon";
 
 const createEditButton = () => {
   const editButton = createContainer("button", createIcon("edit"));
@@ -14,3 +14,4 @@ const addEditButton = (container) => {
 export {
   addEditButton
 };
+

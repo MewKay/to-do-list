@@ -94,7 +94,7 @@ main ul {
   flex-direction: column;
 }
 
-main li {
+.primary {
   padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
@@ -211,7 +211,7 @@ main li:not(:last-child) {
   border-bottom: 2px solid var(--secondary);
 }
 
-main li input[type="checkbox"] {
+.primary input[type="checkbox"] {
   accent-color: var(--accent);
 }
 
@@ -223,7 +223,7 @@ main li input[type="checkbox"] {
   text-decoration: line-through;
 }
 
-main li button {
+.primary button {
   border: none;
   border-radius: 5px;
   padding: .5rem;
@@ -234,10 +234,10 @@ main li button {
   justify-content: center;
 }
 
-main li button:hover {
+.primary button:hover {
   background-color: var(--secondary);
 }
 
-main li button:active {
+.primary button:active {
   opacity: .7;
 }
