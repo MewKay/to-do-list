@@ -43,10 +43,7 @@ const createDueDateDisplay = (toDo) => {
 }
 
 const createDescriptionDisplay = (toDo) => {
-  if(toDo.description === "") {
-    return createContainer("div");
-  }
-
+  
   const text = createContainer("p");
   text.innerText = "Description :";
   text.classList.add("description-prefix");
@@ -57,6 +54,12 @@ const createDescriptionDisplay = (toDo) => {
   
   const container = createContainer("div",text,descriptionText);
   container.classList.add("description-display");
+
+  if(toDo.description === "") {
+    container.innerText = "";
+    container.style.height = "0";
+  }
+
   return container; 
 }
 

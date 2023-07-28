@@ -94,6 +94,11 @@ main ul {
   flex-direction: column;
 }
 
+main li {
+  display: flex;
+  flex-direction: column;
+}
+
 .primary {
   padding: 1.5rem 1rem;
   display: flex;
@@ -112,6 +117,38 @@ main ul {
   display: flex;
   align-items: center;
   gap: .5rem;
+}
+
+.priority-display,
+.due-date-display {
+  display: flex;
+  gap: .5rem;
+}
+
+.details {
+  display: grid;
+  grid: 
+    "priority dueDate" 1fr 
+    "desc desc" 2fr /
+    1fr 1fr;
+  padding: 0 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.priority-display {
+  grid-area: priority;
+}
+
+.due-date-display {
+  grid-area: dueDate;
+}
+
+.description-display {
+  grid-area: desc;
+}
+
+.description-prefix {
+  margin-bottom: .5rem;
 }
 
 /* -- Style -- */

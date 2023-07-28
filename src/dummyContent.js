@@ -6,8 +6,11 @@ import { addDays, addWeeks } from "date-fns";
 
 export const addDummyContent = () => {
   const project1 = Project("Project 1");
+
+  const toDo1 = ToDo("Todo1",addDays(new Date(),1),Priority.MEDIUM)
+  toDo1.description = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente nulla, eos tenetur alias consectetur autem ipsam nobis quibusdam cum!"
   project1.addToDo(
-    ToDo("Todo1",addDays(new Date(),1),Priority.MEDIUM),
+    toDo1,
     ToDo("Todo2",addDays(new Date(),20),Priority.HIGH),
     ToDo("Todo3",addWeeks(new Date(),4),Priority.LOW)
   );
