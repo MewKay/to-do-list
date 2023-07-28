@@ -10,7 +10,7 @@ const thisWeekToDoList = () => {
   let listToDo = [];
   projectList.list.forEach( project => 
     project.list.forEach( toDo => {
-      if(isThisWeek(toDo.dueDate))
+      if(isThisWeek(toDo.dueDate, { weekStartsOn: 1}))
         listToDo.push(toDo);
     }));
   thisWeekContentData.toDoList = listToDo;
