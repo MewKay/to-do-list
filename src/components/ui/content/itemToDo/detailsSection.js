@@ -43,6 +43,10 @@ const createDueDateDisplay = (toDo) => {
 }
 
 const createDescriptionDisplay = (toDo) => {
+  if(toDo.description === "") {
+    return createContainer("div");
+  }
+
   const text = createContainer("p");
   text.innerText = "Description :";
   text.classList.add("description-prefix");

@@ -2,7 +2,7 @@ import { Priority, checkIfPriorityValid } from "../priority";
 import { isValid } from "date-fns";
 
 const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
-  let _description;
+  let _description = "";
   let _taskDone = false;
   const NOT_VALID_PRIORITY_VALUE_MESSAGE = "Not a valid priority value.";
   const NOT_VALID_DATE_VALUE_MESSAGE = "Not a valid date."; 
