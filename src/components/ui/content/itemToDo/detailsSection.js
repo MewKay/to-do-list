@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { Priority } from "../../../priority";
 import { createContainer } from "../../createContainer"
 
@@ -27,14 +28,28 @@ const createPriorityDisplay = (toDo) => {
   return container;
 }
 
+const createDueDateDisplay = (toDo) => {
+  const text = createContainer("p");
+  text.innerText = "Due Date :";
+  text.classList.add("due-date-prefix");
+  
+  const dueDateText = createContainer("p");
+  dueDateText.innerText = format(toDo.dueDate,"MMMM do");
+  dueDateText.classList.add("due-date-suffix");
+  
+  const container = createContainer("div",text,dueDateText);
+  container.classList.add("due-date-display");
+  return container; 
+}
 
 const createDetailsSection = (toDo) => {
   const container = createContainer("div",
-    createPriorityDisplay(toDo));
-  container.classList.add("details");
+    createPriorityDisplay(toDo),
+    createDueDateDisplay(toDo));
+    container.classList.add("details");
   return container;
 }
 
 export {
   createDetailsSection
-}
+};
