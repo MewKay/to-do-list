@@ -225,6 +225,15 @@ main li input[type="checkbox"] {
 
 main li button {
   border: none;
+  border-radius: 5px;
+  padding: .5rem;
   background-color: var(--background);
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main li button:hover {
+  background-color: var(--secondary);
 }

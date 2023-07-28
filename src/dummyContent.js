@@ -1,7 +1,6 @@
 import { Project } from "./components/app-logic/project";
 import { projectList } from "./components/app-logic/projectList";
 import { ToDo } from "./components/app-logic/todo";
-import { inboxProject } from "./components/data/inboxContent";
 import { Priority } from "./components/priority";
 import { addDays, addWeeks } from "date-fns";
 
