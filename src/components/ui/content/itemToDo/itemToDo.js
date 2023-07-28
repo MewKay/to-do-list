@@ -3,6 +3,7 @@ import { Events } from "../../../../pubsub/eventsName";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { createContainer } from "../../createContainer";
 import { ButtonSection } from "./buttonSection/buttonSection";
+import { createDetailsSection } from "./detailsSection";
 
 const createCheckBox = (toDo) => {
   const checkbox = createContainer("input");
@@ -36,6 +37,7 @@ const ItemToDo = (toDo) => {
   const _label = createToDoLabel(toDo.title);
   const _date = createDateDistanceDisplay(toDo.dueDate);
   const _buttonSection = ButtonSection(toDo);
+  const _detailsSection = createDetailsSection(toDo);
 
   const _labelSection = (() => {
     const div = createContainer("div",_checkbox,_label);
@@ -48,6 +50,7 @@ const ItemToDo = (toDo) => {
     _container.appendChild(_labelSection);
     _container.appendChild(_date);
     _container.appendChild(_buttonSection.container);
+    _container.appendChild(_detailsSection);
 
     if(toDo.completionCheck) {
       _container.classList.add("done");
