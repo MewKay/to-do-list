@@ -237,3 +237,7 @@ main li button {
 main li button:hover {
   background-color: var(--secondary);
 }
+
+main li button:active {
+  opacity: .7;
+}
