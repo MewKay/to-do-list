@@ -282,3 +282,7 @@ main li:not(:last-child) {
 .primary button:active {
   opacity: .7;
 }
+
+.details {
+  font-size: .9rem;
+}
