@@ -4,6 +4,10 @@ import { createIcon } from "../../../../createIcon";
 const createDetailsButton = () => {
   const detailsButton = createContainer("button", createIcon("description"));
   detailsButton.classList.add("btn-details");
+  detailsButton.addEventListener("click", () => {
+    const detailSection = detailsButton.closest(".primary").nextElementSibling;
+    detailSection.classList.toggle("hidden");
+  });
   return detailsButton;
 }
 

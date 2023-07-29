@@ -69,6 +69,7 @@ const createDetailsSection = (toDo) => {
     createDueDateDisplay(toDo),
     createDescriptionDisplay(toDo));
     container.classList.add("details");
+    container.classList.add("hidden");
   return container;
 }
 

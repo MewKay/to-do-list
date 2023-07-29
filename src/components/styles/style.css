@@ -135,6 +135,10 @@ main li {
   padding-bottom: 1.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .priority-display {
   grid-area: priority;
 }
