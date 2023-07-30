@@ -12,6 +12,7 @@ const ItemToDo = (toDo) => {
 
   const renderItem = () => {
     _container.innerText = "";
+    _container.classList.add("todo-item");
     _container.appendChild(_primarySection.container);
     _container.appendChild(_detailsSection);
 

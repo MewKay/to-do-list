@@ -12,11 +12,11 @@ const ButtonSection = (toDo) => {
     if(!toDo.completionCheck) {
       addDetailsButton(_container);
       addEditButton(_container);
-      addDeleteButton(_container);
+      addDeleteButton(_container,toDo);
     }
     else {
       addDetailsButton(_container);
-      addDeleteButton(_container);
+      addDeleteButton(_container,toDo);
     }
   }
 

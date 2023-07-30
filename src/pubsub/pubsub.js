@@ -3,7 +3,7 @@ const createPubSub = () => {
 
   const subscribe = (eventName, functionToCall) => {
     events[eventName] = events[eventName] || [];
-    events[eventName].push(functionToCall)
+    events[eventName].push(functionToCall);
   }
 
   const unsubscribe = (eventName, functionToCall) => {

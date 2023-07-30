@@ -8,11 +8,12 @@ const Project = (name = "Default") => {
     _toDoList.push(...toDo);
     pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
-
+  
   const removeToDoWithTitle = (...toDoTitles) => {
     toDoTitles.forEach(toDoTitleToRemove => {
       _toDoList = _toDoList.filter(toDo => toDo.title !== toDoTitleToRemove);
     });
+    pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
 
   return {
