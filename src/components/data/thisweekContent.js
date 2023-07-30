@@ -8,11 +8,13 @@ const thisWeekContentData = ContentData("This Week",[]);
 
 const thisWeekToDoList = () => {
   let listToDo = [];
-  projectList.list.forEach( project => 
+  projectList.list.forEach( project => {
     project.list.forEach( toDo => {
       if(isThisWeek(toDo.dueDate, { weekStartsOn: 1}))
         listToDo.push(toDo);
-    }));
+    })
+    pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
+  });
   thisWeekContentData.toDoList = listToDo;
 }
 

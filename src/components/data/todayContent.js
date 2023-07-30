@@ -8,11 +8,13 @@ const todayContentData = ContentData("Today",[]);
 
 const todayToDoList = () => {
   let listToDo = [];
-  projectList.list.forEach( project => 
+  projectList.list.forEach( project => {
     project.list.forEach( toDo => {
       if(isToday(toDo.dueDate))
         listToDo.push(toDo);
-    }));
+    })
+    pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
+  });
   todayContentData.toDoList = listToDo;
 }
 
