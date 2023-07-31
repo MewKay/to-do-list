@@ -1,6 +1,6 @@
 import { createContainer } from "../createContainer";
 import { highlightedTodos } from "./highlightedTodos/highlightedTodos";
-import { inbox } from "./inbox";
+import { inbox } from "./inbox/inbox";
 import { projects } from "./projects/projects";
 import { pubSub } from "../../../pubsub/pubsub";
 import { addClassSelected } from "./addClassSelected";

@@ -1,7 +1,6 @@
 import { createContainer } from "../../createContainer";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { projectContentData } from "../../../data/projectContent";
-import { inbox } from "../inbox";
 import { Events } from "../../../../pubsub/eventsName";
 import { createIcon } from "../../createIcon";
 
