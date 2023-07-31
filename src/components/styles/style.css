@@ -283,6 +283,10 @@ main li:not(:last-child) {
   opacity: .7;
 }
 
+.primary > p {
+  color: var(--accent);
+}
+
 .details {
   font-size: .9rem;
 }
