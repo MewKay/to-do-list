@@ -1,5 +1,5 @@
-import { createContainer } from "./createContainer";
-import { createIcon } from "./createIcon";
+import { createContainer } from "../createContainer";
+import { createIcon } from "../createIcon";
 
 const createAppTitle = () => {
   const appTitle = document.createElement("h1");

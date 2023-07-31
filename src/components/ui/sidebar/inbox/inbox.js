@@ -1,7 +1,7 @@
-import { Events } from "../../../pubsub/eventsName";
-import { pubSub } from "../../../pubsub/pubsub";
-import { inboxContentData } from "../../data/inboxContent";
-import { createIcon } from "../createIcon"
+import { Events } from "../../../../pubsub/eventsName";
+import { pubSub } from "../../../../pubsub/pubsub";
+import { inboxContentData } from "../../../data/inboxContent";
+import { createIcon } from "../../createIcon"
 
 const createInboxText = () => {
   const text = document.createElement("p");
