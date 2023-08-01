@@ -14,6 +14,7 @@ const createTextfield = () => {
   text.type = "text";
   text.name = "title";
   text.maxLength = 30;
+  text.size = 25;
   return text;
 }
 
