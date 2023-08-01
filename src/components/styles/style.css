@@ -155,6 +155,15 @@ main li {
   margin-bottom: .5rem;
 }
 
+/* --- Modal --- */
+
+.modal-container {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
 /* -- Style -- */
 
 body {
@@ -295,4 +304,6 @@ main li:not(:last-child) {
 
 dialog {
   background-color: var(--secondary);
+  border: none;
+  border-radius: 10px;
 }

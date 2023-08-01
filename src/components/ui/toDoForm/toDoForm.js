@@ -18,7 +18,7 @@ const createFormContainer = (toDo) => {
   leftSection.classList.add("left-section");
   rightSection.classList.add("right-section");
   
-  const container = createContainer("div",
+  const container = createContainer("form",
     leftSection,
     rightSection);
   container.classList.add("modal-container");
