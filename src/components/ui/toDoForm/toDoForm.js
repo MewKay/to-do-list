@@ -11,13 +11,16 @@ const createFormContainer = (toDo) => {
   const priorityInput = createPriorityInput();
   const dueDateInput = createDueDateInput(); 
   const buttons = createFormButtons();
+
+  const leftSection = createContainer("div", titleInput, descriptionInput);
+  const rightSection = createContainer("div", priorityInput, dueDateInput, buttons);
+
+  leftSection.classList.add("left-section");
+  rightSection.classList.add("right-section");
   
   const container = createContainer("div",
-    titleInput ,
-    descriptionInput,
-    priorityInput,
-    dueDateInput,
-    buttons);
+    leftSection,
+    rightSection);
   container.classList.add("modal-container");
   return container;
 }
