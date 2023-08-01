@@ -9,13 +9,11 @@ const createLabel = () => {
 
 const createTextfield = () => {
   const text = createContainer("input");
-  
   text.id = "title-input";
   text.required = true;
   text.type = "text";
   text.name = "title";
   text.maxLength = 30;
-  
   return text;
 }
 
