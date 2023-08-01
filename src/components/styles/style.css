@@ -193,6 +193,10 @@ form .left-section {
   resize: none;
 }
 
+.form-buttons {
+  justify-content: space-evenly;
+}
+
 /* -- Style -- */
 
 body {
@@ -332,7 +336,33 @@ main li:not(:last-child) {
 /* --- Modal --- */
 
 dialog {
+  color: var(--text);
   background-color: var(--secondary);
+  font-weight: 600;
   border: none;
   border-radius: 10px;
+}
+
+dialog input,
+textarea {
+  font-family: var(--font-text);
+}
+
+.form-buttons .material-symbols-sharp {
+  color: var(--text);
+}
+
+.form-buttons .btn-confirm,
+.form-buttons .btn-cancel {
+  border: none;
+  border-radius: 3px;
+  padding: .3em 1em;  
+}
+
+.form-buttons .btn-confirm {
+  background-color: var(--primary);
+}
+
+.form-buttons .btn-cancel {
+  background-color: red;
 }

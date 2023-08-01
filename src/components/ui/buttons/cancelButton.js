@@ -2,8 +2,9 @@ import { createContainer } from "../createContainer";
 import { createIcon } from "../createIcon";
 
 const createCancelButton = () => {
-  const noButton = createContainer("button", createIcon("close"));
-  return noButton;  
+  const cancelButton = createContainer("button", createIcon("close"));
+  cancelButton.classList.add("btn-cancel");
+  return cancelButton;  
 }
 
 export {
