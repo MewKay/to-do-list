@@ -1,5 +1,12 @@
 import { createContainer } from "../createContainer"
 
+const createLabel = () => {
+  const label = createContainer("label");
+  label.setAttribute("for","title-input");
+  label.innerText = "Title :";
+  return label;
+}
+
 const createTextfield = () => {
   const text = createContainer("input");
   
@@ -10,13 +17,6 @@ const createTextfield = () => {
   text.maxLength = 30;
   
   return text;
-}
-
-const createLabel = () => {
-  const label = createContainer("label");
-  label.setAttribute("for","title-input");
-  label.innerText = "Title :";
-  return label;
 }
 
 const createTitleInput = () => {
