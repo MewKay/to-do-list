@@ -24,7 +24,7 @@ const createTitleInput = () => {
   const text = createTextfield();
   const label = createLabel();
   
-  const container = createContainer("div",text,label);
+  const container = createContainer("div",label,text);
   return container;
 }
 

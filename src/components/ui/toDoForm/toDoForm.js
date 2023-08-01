@@ -3,14 +3,19 @@ import { createTitleInput } from "./titleInput";
 
 const createFormContainer = (toDo) => {
   const titleInput = createTitleInput();
-  const descriptionInput = createdescriptionInput();
+/*const descriptionInput = createdescriptionInput();
   const priorityInput = createPriorityInput();
-  const dueDateInput = createDueDateInput();
+  const dueDateInput = createDueDateInput(); */ 
   
   const container = createContainer("div",
-    titleInput,
+    titleInput /*,
     descriptionInput,
     priorityInput,
-    dueDateInput);
+    dueDateInput */);
+  container.classList.add("modal-container");
   return container;
+}
+
+export {
+  createFormContainer
 }

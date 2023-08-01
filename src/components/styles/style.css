@@ -14,11 +14,11 @@
 
 body {
   height: 100vh;
-  display: grid;
+/*  display: grid;
   grid: 
     "header header" 10%
     "sidebar main" 90% /
-    1fr 4fr;
+    1fr 4fr; */
 }
 
 button {
@@ -289,4 +289,10 @@ main li:not(:last-child) {
 
 .details {
   font-size: .9rem;
+}
+
+/* --- Modal --- */
+
+.modal-container {
+  background-color: var(--secondary);
 }
