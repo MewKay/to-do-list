@@ -22,6 +22,12 @@ const createFormContainer = (toDo) => {
   return container;
 }
 
+const createModal = (toDo) => {
+  const form = createFormContainer(toDo);
+  const modal = createContainer("dialog", form);
+  return modal;
+}
+
 export {
-  createFormContainer
+  createModal
 }

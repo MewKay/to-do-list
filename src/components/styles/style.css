@@ -293,6 +293,6 @@ main li:not(:last-child) {
 
 /* --- Modal --- */
 
-.modal-container {
+dialog {
   background-color: var(--secondary);
 }

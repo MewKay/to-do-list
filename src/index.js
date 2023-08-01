@@ -1,5 +1,7 @@
 import "./components/styles/reset.css";
 import "./components/styles/style.css";
-import { createFormContainer } from "./components/ui/toDoForm/toDoForm";
+import { createModal } from "./components/ui/toDoForm/toDoForm";
 
-document.body.appendChild(createFormContainer());
+const myDialog = createModal();
+document.body.appendChild(myDialog);
+myDialog.showModal();
