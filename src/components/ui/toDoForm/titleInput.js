@@ -7,7 +7,7 @@ const createTextfield = () => {
   text.required = true;
   text.type = "text";
   text.name = "title";
-  text.maxLength = 100;
+  text.maxLength = 30;
   
   return text;
 }
