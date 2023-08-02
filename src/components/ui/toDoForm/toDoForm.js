@@ -12,11 +12,21 @@ const createFormContainer = (toDo) => {
   const dueDateInput = createDueDateInput(); 
   const buttons = createFormButtons();
 
-  const leftSection = createContainer("div", titleInput, descriptionInput);
-  const rightSection = createContainer("div", priorityInput, dueDateInput, buttons);
+  const leftSection = createContainer("div", titleInput.container, descriptionInput.container);
+  const rightSection = createContainer("div", priorityInput.container, dueDateInput.container, buttons);
 
   leftSection.classList.add("left-section");
   rightSection.classList.add("right-section");
+
+  titleInput.text.value = toDo.title;
+  descriptionInput.textArea.value = toDo.description;
+  
+  for( const option of priorityInput.selection.options) {
+    if(option.value === toDo.priority)
+      option.selected = true;
+  }
+
+  dueDateInput.date.valueAsDate = toDo.dueDate;
   
   const container = createContainer("form",
     leftSection,

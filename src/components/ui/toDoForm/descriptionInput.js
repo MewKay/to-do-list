@@ -19,7 +19,10 @@ const createDescriptionInput = () => {
   const textArea = createTextArea();
   const container = createContainer("div",label,textArea);
   container.classList.add("form-desc");
-  return container;
+  return {
+    container,
+    textArea
+  };
 }
 
 export {

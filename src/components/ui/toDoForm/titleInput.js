@@ -24,7 +24,10 @@ const createTitleInput = () => {
   
   const container = createContainer("div",label,text);
   container.classList.add("form-title");
-  return container;
+  return {
+    container,
+    text
+  };
 }
 
 export {

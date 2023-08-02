@@ -22,7 +22,10 @@ const createDueDateInput = () => {
   const date = createDateInput();
   const container = createContainer("div",label,date);
   container.classList.add("form-due-date");
-  return container;
+  return {
+    container,
+    date
+  };
 }
 
 export {

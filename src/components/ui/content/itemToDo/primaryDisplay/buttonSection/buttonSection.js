@@ -11,7 +11,7 @@ const ButtonSection = (toDo) => {
     _container.innerText = "";
     if(!toDo.completionCheck) {
       addDetailsButton(_container);
-      addEditButton(_container);
+      addEditButton(_container,toDo);
       addDeleteButton(_container,toDo);
     }
     else {

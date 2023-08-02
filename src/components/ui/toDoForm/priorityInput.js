@@ -26,7 +26,10 @@ const createPriorityInput = () => {
   const selection = createSelection();
   const container = createContainer("div",label,selection);
   container.classList.add("form-priority");
-  return container;
+  return {
+    container,
+    selection
+  };
 }
 
 export {
