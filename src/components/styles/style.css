@@ -14,11 +14,11 @@
 
 body {
   height: 100vh;
-/*  display: grid;
+  display: grid;
   grid: 
     "header header" 10%
     "sidebar main" 90% /
-    1fr 4fr; */
+    1fr 4fr;
 }
 
 button {
@@ -364,5 +364,5 @@ textarea {
 }
 
 .form-buttons .btn-cancel {
-  background-color: red;
+  background-color: var(--accent);
 }
