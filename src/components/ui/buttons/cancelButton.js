@@ -1,16 +1,12 @@
-import { createContainer } from "../../../../createContainer";
+import { createContainer } from "../createContainer";
+import { createIcon } from "../createIcon";
 
 const createCancelButton = () => {
-  const noButton = createContainer("button");
-  noButton.innerText = "No";
-  return noButton;  
-}
-
-const addCancelButton = (container) => {
-  container.appendChild(createCancelButton());
-  return container;
+  const cancelButton = createContainer("button", createIcon("close"));
+  cancelButton.classList.add("btn-cancel");
+  return cancelButton;  
 }
 
 export {
-  addCancelButton
+  createCancelButton
 };
