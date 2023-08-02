@@ -3,11 +3,15 @@ import { createConfirmButton } from "../buttons/confirmButton"
 import { createContainer } from "../createContainer";
 
 const createFormButtons = () => {
-  const confirm = createConfirmButton();
-  const cancel = createCancelButton();
-  const container = createContainer("div",confirm,cancel);
+  const confirmButton = createConfirmButton();
+  const cancelButton = createCancelButton();
+  const container = createContainer("div",confirmButton,cancelButton);
   container.classList.add("form-buttons");
-  return container;
+  return {
+    container,
+    confirmButton,
+    cancelButton
+  };
 }
 
 export {

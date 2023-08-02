@@ -15,6 +15,9 @@ const ToDo = (title, dueDate = new Date(), priority = Priority.LOW) => {
     get title() {
       return title;
     },
+    set title(value) {
+      title = value;
+    },
     get description() {
       return _description;
     },
