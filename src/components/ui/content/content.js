@@ -13,8 +13,6 @@ const content = createContent();
 
 pubSub.subscribe(Events.CONTENT_UPDATE,renderContent);
 
-renderContent(inboxContentData);
-
 export {
   content
 };
