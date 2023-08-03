@@ -1,5 +1,6 @@
 import { Events } from "../../../pubsub/eventsName";
 import { pubSub } from "../../../pubsub/pubsub";
+import { currentContentData } from "../../data/currentData";
 import { createContainer } from "../createContainer"
 import { createDescriptionInput } from "./descriptionInput";
 import { createDueDateInput } from "./duedateInput";
@@ -66,7 +67,7 @@ const createModal = (toDo) => {
   form.confirmButton.addEventListener("click", (event) => {
     event.preventDefault();
     form.saveValues();
-    pubSub.publish(Events.TO_DO_LIST_UPDATE);
+    pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
     modal.close();
   });
   
