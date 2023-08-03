@@ -85,6 +85,7 @@ const createModal = (toDo) => {
     modal.close();
     removeModal();
   })
+  
   return modal;
 }
 
