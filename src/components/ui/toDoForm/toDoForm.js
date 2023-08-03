@@ -1,5 +1,6 @@
 import { Events } from "../../../pubsub/eventsName";
 import { pubSub } from "../../../pubsub/pubsub";
+import { ToDo } from "../../app-logic/todo";
 import { currentContentData } from "../../data/currentData";
 import { createContainer } from "../createContainer"
 import { createDescriptionInput } from "./descriptionInput";
@@ -36,17 +37,19 @@ const createFormContainer = (toDo) => {
   })();
 
   const saveValues = () => {
-    toDo.title = titleInput.text.value;
-    toDo.description = descriptionInput.textArea.value;
+    const tempToDo = ToDo();
+
+    tempToDo.title = titleInput.text.value;
+    tempToDo.description = descriptionInput.textArea.value;
 
     for( const option of priorityInput.selection.options ) {
       if(option.selected) 
-        toDo.priority = option.value;
+        tempToDo.priority = option.value;
     }
 
-    toDo.dueDate = dueDateInput.date.valueAsDate;
+    tempToDo.dueDate = dueDateInput.date.valueAsDate;
 
-    pubSub.publish(Events.TO_DO_LIST_UPDATE);
+    return tempToDo;
   }
   
   const container = createContainer("form",
@@ -64,31 +67,39 @@ const createFormContainer = (toDo) => {
   };
 }
 
-const createModal = (toDo) => {
-  const form = createFormContainer(toDo);
-  const modal = createContainer("dialog", form.container);
+const Modal = (toDo) => {
+  const _form = createFormContainer(toDo);
+  const _container = createContainer("dialog", _form.container);
+  let _toDo = toDo;
 
   const removeModal = () => {
-    document.body.removeChild(modal);
+    document.body.removeChild(_container);
   }
 
-  form.confirmButton.addEventListener("click", (event) => {
+  _form.confirmButton.addEventListener("click", (event) => {
     event.preventDefault();
-    if(form.container.reportValidity()) {
-      form.saveValues();
-      pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
+    if(_form.container.reportValidity()) {
+      _toDo = _form.saveValues();
+      _container.close();
       removeModal();
     }
   });
   
-  form.cancelButton.addEventListener("click", () => {
-    modal.close();
+  _form.cancelButton.addEventListener("click", () => {
+    _container.close();
     removeModal();
   })
-  
-  return modal;
+
+  return {
+    get container() {
+      return _container;
+    },
+    get toDo() {
+      return _toDo;
+    }
+  };
 }
 
 export {
-  createModal
+  Modal
 }
