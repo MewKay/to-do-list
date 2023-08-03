@@ -52,7 +52,10 @@ const createFormContainer = (toDo) => {
   const container = createContainer("form",
   leftSection,
     rightSection);
+
   container.classList.add("modal-container");
+  container.method = "dialog";
+  
   return {
     container,
     confirmButton,
@@ -71,14 +74,14 @@ const createModal = (toDo) => {
 
   form.confirmButton.addEventListener("click", (event) => {
     event.preventDefault();
-    form.saveValues();
-    pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
-    modal.close();
-    removeModal();
+    if(form.container.reportValidity()) {
+      form.saveValues();
+      pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
+      removeModal();
+    }
   });
   
-  form.cancelButton.addEventListener("click", (event) => {
-    event.preventDefault();
+  form.cancelButton.addEventListener("click", () => {
     modal.close();
     removeModal();
   })
