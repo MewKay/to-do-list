@@ -9,14 +9,14 @@ import { Events } from "./pubsub/eventsName";
 import { inboxContentData } from "./components/data/inboxContent";
 import { projectList } from "./components/app-logic/projectList";
 
-projectList.list.forEach( project => {
-  pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
-});
-
 document.body.appendChild(header);
 document.body.appendChild(sidebar);
 document.body.appendChild(content);
 
 addDummyContent();
+
+projectList.list.forEach( project => {
+  pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
+});
 
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
