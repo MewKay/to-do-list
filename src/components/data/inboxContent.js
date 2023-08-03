@@ -17,7 +17,7 @@ const inboxToDoList = () => {
   inboxContentData.toDoList = listToDo;
 }
 
-pubSub.subscribe(Events.TO_DO_LIST_UPDATE,inboxToDoList);
+pubSub.subscribe(Events.TO_DO_LIST_UPDATE, inboxToDoList);
 
 projectList.addProject(inboxProject);
 
