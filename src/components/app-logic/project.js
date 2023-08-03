@@ -4,8 +4,11 @@ import { pubSub } from "../../pubsub/pubsub";
 const Project = (name = "Default") => {
   let _toDoList = [];
 
-  const addToDo = (...toDo) => {
-    _toDoList.push(...toDo);
+  const addToDo = (...toDos) => {
+    toDos.forEach( toDo => {
+      toDo.parentProject = name;
+      _toDoList.push(toDo);
+    });
     pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
   

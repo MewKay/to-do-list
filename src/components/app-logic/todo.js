@@ -4,8 +4,9 @@ import { isValid } from "date-fns";
 const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
   let _description = "";
   let _taskDone = false;
+  let _parentProject;
   const NOT_VALID_PRIORITY_VALUE_MESSAGE = "Not a valid priority value.";
-  const NOT_VALID_DATE_VALUE_MESSAGE = "Not a valid date."; 
+  const NOT_VALID_DATE_VALUE_MESSAGE = "Not a valid date.";
 
   const toggleCompletionStatus = () => {
     _taskDone = !_taskDone;
@@ -42,6 +43,12 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
     },
     get completionCheck() {
       return _taskDone;
+    },
+    get parentProject() {
+      return _parentProject;
+    },
+    set parentProject(value) {
+      _parentProject = value;
     },
     toggleCompletionStatus
   }
