@@ -1,5 +1,7 @@
+import { ToDo } from "../../app-logic/todo";
 import { createContainer } from "../createContainer";
 import { createIcon } from "../createIcon";
+import { createModal } from "../toDoForm/toDoForm";
 import { content } from "./content"
 import { ItemToDo } from "./itemToDo/itemToDo";
 
@@ -8,7 +10,11 @@ const createAddToDoButton = () => {
   buttonText.innerText = "Add To Do";
   const addToDoContainer = createContainer("button", createIcon("add"), buttonText);
   addToDoContainer.classList.add("btn-add-to-do");
-
+  addToDoContainer.addEventListener("click", () => {
+    const modal = createModal(ToDo());
+    document.body.appendChild(modal);
+    modal.showModal();
+  })
   return addToDoContainer;
 }
 
