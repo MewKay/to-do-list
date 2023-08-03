@@ -4,6 +4,7 @@ import { createContainer } from "../createContainer";
 
 const createFormButtons = () => {
   const confirmButton = createConfirmButton();
+  confirmButton.type = "submit";
   const cancelButton = createCancelButton();
   const container = createContainer("div",confirmButton,cancelButton);
   container.classList.add("form-buttons");

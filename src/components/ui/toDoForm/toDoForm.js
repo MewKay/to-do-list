@@ -65,16 +65,22 @@ const createModal = (toDo) => {
   const form = createFormContainer(toDo);
   const modal = createContainer("dialog", form.container);
 
+  const removeModal = () => {
+    document.body.removeChild(modal);
+  }
+
   form.confirmButton.addEventListener("click", (event) => {
     event.preventDefault();
     form.saveValues();
     pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
     modal.close();
+    removeModal();
   });
   
   form.cancelButton.addEventListener("click", (event) => {
     event.preventDefault();
     modal.close();
+    removeModal();
   })
   return modal;
 }

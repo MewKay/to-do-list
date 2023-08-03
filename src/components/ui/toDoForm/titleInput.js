@@ -13,6 +13,7 @@ const createTextfield = () => {
   text.required = true;
   text.type = "text";
   text.name = "title";
+  text.minLength = 1;
   text.maxLength = 30;
   text.size = 25;
   return text;
