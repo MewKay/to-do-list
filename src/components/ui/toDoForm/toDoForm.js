@@ -46,6 +46,7 @@ const createFormContainer = (toDo) => {
 
     toDo.dueDate = dueDateInput.date.valueAsDate;
 
+    pubSub.publish(Events.TO_DO_LIST_UPDATE);
   }
   
   const container = createContainer("form",
