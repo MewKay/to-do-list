@@ -84,8 +84,24 @@ main {
   flex-direction: column;
 }
 
-main h1 {
-  margin-bottom: 2rem;
+.content-head {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-title {
+  padding: .7rem;
+}
+
+.btn-add-to-do {
+  padding: .5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .2rem;
 }
 
 main ul {
@@ -279,10 +295,26 @@ header .material-symbols-sharp {
 
 /* --- Content --- */
 
-main h1 {
+.content-title {
   font-family: var(--font-heading);
   font-size: 2.7rem;
   letter-spacing: 2px;
+}
+
+.btn-add-to-do {
+  border: 2px solid var(--background);
+  border-radius: 15px;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 2.35rem;
+}
+
+.btn-add-to-do .material-symbols-sharp {
+  font-size: 2.5rem;
+}
+
+.btn-add-to-do:hover {
+  border-color: var(--text);
 }
 
 main ul {
