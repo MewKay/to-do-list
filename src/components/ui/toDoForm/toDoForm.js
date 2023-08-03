@@ -1,7 +1,4 @@
-import { Events } from "../../../pubsub/eventsName";
-import { pubSub } from "../../../pubsub/pubsub";
 import { ToDo } from "../../app-logic/todo";
-import { currentContentData } from "../../data/currentData";
 import { createContainer } from "../createContainer"
 import { createDescriptionInput } from "./descriptionInput";
 import { createDueDateInput } from "./duedateInput";

@@ -1,6 +1,5 @@
 import { Events } from "../../../pubsub/eventsName";
 import { pubSub } from "../../../pubsub/pubsub";
-import { inboxContentData } from "../../data/inboxContent";
 import { createContainer } from "../createContainer";
 import { renderContent } from "./renderContent";
 
