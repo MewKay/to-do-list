@@ -15,8 +15,12 @@ document.body.appendChild(content);
 
 addDummyContent();
 
-projectList.list.forEach( project => {
-  pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
+pubSub.subscribe(Events.TO_DO_DELETED, data => {
+  projectList.list.forEach( project => {
+    if( project.name === data.projectName ) 
+      project.removeToDoWithTitle(data.toDoTitle);
+  })
 });
+
 
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);

@@ -17,7 +17,7 @@ export const addDummyContent = () => {
 
   const project2 = Project("Project 2");
   project2.addToDo(
-    ToDo("Todo4",addDays(new Date(),10),Priority.MEDIUM),
+    ToDo("Todo2",addDays(new Date(),10),Priority.MEDIUM),
     ToDo("Todo5",addDays(new Date(),2),Priority.HIGH)
   );
 

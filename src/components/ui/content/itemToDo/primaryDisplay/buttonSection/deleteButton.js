@@ -8,7 +8,7 @@ const createDeleteButton = (toDo) => {
   const deleteButton = createContainer("button", createIcon("delete"));
   deleteButton.classList.add("btn-delete-to-do");
   deleteButton.addEventListener("click", () => {
-    pubSub.publish(Events.TO_DO_DELETED, toDo.title);
+    pubSub.publish(Events.TO_DO_DELETED, {projectName : toDo.parentProject, toDoTitle : toDo.title});
     pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
   });
   return deleteButton;
