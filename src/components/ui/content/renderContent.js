@@ -1,11 +1,33 @@
 import { createContainer } from "../createContainer";
+import { createIcon } from "../createIcon";
 import { content } from "./content"
 import { ItemToDo } from "./itemToDo/itemToDo";
 
+const createAddToDoButton = () => {
+  const buttonText = createContainer("p");
+  buttonText.innerText = "Add To Do";
+  const addToDoContainer = createContainer("button", createIcon("add"), buttonText);
+  addToDoContainer.classList.add("btn-add-to-do");
+
+  return addToDoContainer;
+}
+
 const createTitleContainer = (title) => {
-  const titleContainer = createContainer("h1");
-  titleContainer.innerText = title;
-  titleContainer.classList.add("content-title");
+  const contentTitle = createContainer("h1");
+
+  contentTitle.innerText = title;
+  contentTitle.classList.add("content-title");
+
+  const titleContainer = createContainer("div", contentTitle);
+  
+  if( title !== "Today" &&
+    title !== "This Week" &&
+    title !== "Important") {
+    const addButton = createAddToDoButton();
+    titleContainer.appendChild(addButton);
+  }
+
+  titleContainer.classList.add("content-head");
   return titleContainer;
 }
 
