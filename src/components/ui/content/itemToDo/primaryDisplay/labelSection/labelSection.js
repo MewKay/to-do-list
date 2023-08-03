@@ -5,7 +5,7 @@ import { createToDoLabel } from "./toDoLabel";
 const createLabelSection = (toDo) => {
   const container = createContainer("div",
     createCheckBox(toDo),
-    createToDoLabel(toDo.title));
+    createToDoLabel(toDo));
   container.classList.add("label-section");
   return container;
 }

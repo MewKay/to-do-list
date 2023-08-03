@@ -129,6 +129,12 @@ main li {
   gap: .5rem;
 }
 
+.label-section label {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
 .btn-section {
   display: flex;
   align-items: center;
@@ -328,6 +334,11 @@ main li:not(:last-child) {
 
 .primary input[type="checkbox"] {
   accent-color: var(--accent);
+}
+
+.project-name {
+  font-size: .9rem;
+  opacity: .5;
 }
 
 .done * {
