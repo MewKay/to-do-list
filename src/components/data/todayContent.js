@@ -13,7 +13,6 @@ const todayToDoList = () => {
       if(isToday(toDo.dueDate))
         listToDo.push(toDo);
     })
-    pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
   });
   todayContentData.toDoList = listToDo;
 }

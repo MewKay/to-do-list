@@ -13,7 +13,6 @@ const thisWeekToDoList = () => {
       if(isThisWeek(toDo.dueDate, { weekStartsOn: 1}))
         listToDo.push(toDo);
     })
-    pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
   });
   thisWeekContentData.toDoList = listToDo;
 }

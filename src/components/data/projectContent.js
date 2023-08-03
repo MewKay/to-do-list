@@ -7,8 +7,6 @@ const projectContentData = (project) => {
   const list = project.list;
   const contentData = ContentData(title,list);
 
-  pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
-  
   return contentData;
 }
 

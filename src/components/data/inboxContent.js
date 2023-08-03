@@ -15,8 +15,6 @@ const inboxToDoList = () => {
   const listToDo = [];
   inboxProject.list.forEach( toDo => listToDo.push(toDo));
   inboxContentData.toDoList = listToDo;
-
-  pubSub.subscribe(Events.TO_DO_DELETED, inboxProject.removeToDoWithTitle);
 }
 
 pubSub.subscribe(Events.TO_DO_LIST_UPDATE,inboxToDoList);

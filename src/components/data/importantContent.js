@@ -13,7 +13,6 @@ const importantToDoList = () => {
       if(toDo.priority === Priority.HIGH)
         listToDo.push(toDo);
       })
-    pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
     });
   importantContentData.toDoList = listToDo;
 }

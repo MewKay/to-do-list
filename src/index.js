@@ -7,6 +7,11 @@ import { addDummyContent } from "./dummyContent";
 import { pubSub } from "./pubsub/pubsub";
 import { Events } from "./pubsub/eventsName";
 import { inboxContentData } from "./components/data/inboxContent";
+import { projectList } from "./components/app-logic/projectList";
+
+projectList.list.forEach( project => {
+  pubSub.subscribe(Events.TO_DO_DELETED, project.removeToDoWithTitle);
+});
 
 document.body.appendChild(header);
 document.body.appendChild(sidebar);
