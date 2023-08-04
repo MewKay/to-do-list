@@ -15,12 +15,22 @@ const createProjectList = () => {
     });
   } 
 
+  const getProjectWithName = (ProjectName) => {
+    let projectToFind;
+    _list.forEach( project => {
+      if(project.name === ProjectName) 
+        projectToFind = project;
+    });
+    return projectToFind;
+  }
+
   return {
     get list() {
       return _list;
     },
     addProject,
-    removeProjectWithName
+    removeProjectWithName,
+    getProjectWithName
   };
 }
 
