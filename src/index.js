@@ -16,10 +16,8 @@ document.body.appendChild(content);
 addDummyContent();
 
 pubSub.subscribe(Events.TO_DO_DELETED, data => {
-  projectList.list.forEach( project => {
-    if( project.name === data.projectName ) 
-      project.removeToDoWithTitle(data.toDoTitle);
-  })
+  let project = projectList.getProjectWithName(data.projectName);
+  project.removeToDoWithTitle(data.toDoTitle);
 });
 
 
