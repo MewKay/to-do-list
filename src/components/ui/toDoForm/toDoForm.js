@@ -73,18 +73,13 @@ const Modal = (toDo) => {
     document.body.removeChild(_container);
   }
 
-  _form.confirmButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    if(_form.container.reportValidity()) {
-      _toDo = _form.saveValues();
-      _container.close();
-      removeModal();
-    }
+  _container.addEventListener("close", () => {
+    removeModal();
+    if(_container.returnValue === "confirmed") _toDo = _form.saveValues();
   });
   
   _form.cancelButton.addEventListener("click", () => {
     _container.close();
-    removeModal();
   })
 
   return {

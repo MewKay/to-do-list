@@ -1,4 +1,8 @@
+import { Events } from "../../../pubsub/eventsName";
+import { pubSub } from "../../../pubsub/pubsub";
+import { projectList } from "../../app-logic/projectList";
 import { ToDo } from "../../app-logic/todo";
+import { currentContentData } from "../../data/currentData";
 import { createContainer } from "../createContainer";
 import { createIcon } from "../createIcon";
 import { Modal } from "../toDoForm/toDoForm";
@@ -14,6 +18,12 @@ const createAddToDoButton = () => {
     const modal = Modal(ToDo());
     document.body.appendChild(modal.container);
     modal.container.showModal();
+    modal.container.addEventListener("close", () => {
+    if (modal.container.returnValue === "confirmed"){ 
+      let project = projectList.getProjectWithName(currentContentData.title);
+      project.addToDo(modal.toDo);
+      pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
+    }})
   }) 
   return addToDoContainer;
 }
