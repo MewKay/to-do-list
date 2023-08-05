@@ -342,7 +342,7 @@ main li:not(:last-child) {
 }
 
 .done * {
-  opacity: .4;
+  opacity: .7;
 }
 
 .done label {
