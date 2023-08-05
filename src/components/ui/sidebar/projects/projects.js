@@ -3,7 +3,7 @@ import { pubSub } from "../../../../pubsub/pubsub";
 import { projectContentData } from "../../../data/projectContent";
 import { Events } from "../../../../pubsub/eventsName";
 import { createIcon } from "../../createIcon";
-import { addProjectContainer } from "./addProject";
+import { AddProject } from "./addProject";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -32,8 +32,8 @@ const renderProjectList = (list) => {
     }
   });
 
-  const addProject = addProjectContainer();
-  projects.appendChild(addProject);
+  const addProject = AddProject();
+  projects.appendChild(addProject.container);
 }
 
 pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);
