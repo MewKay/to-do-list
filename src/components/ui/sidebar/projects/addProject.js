@@ -12,6 +12,10 @@ const AddProject = () => {
     _container.appendChild(container);
   }
 
+  _button.addEventListener("click", () => {
+    renderAddProject(_input);
+  });
+
   renderAddProject(_button);
 
   return {
