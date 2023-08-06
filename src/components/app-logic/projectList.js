@@ -1,5 +1,7 @@
 import { Events } from "../../pubsub/eventsName";
 import { pubSub } from "../../pubsub/pubsub";
+import { Project } from "./project";
+import { ToDo } from "./todo";
 
 const createProjectList = () => {
   let _list = [];
@@ -25,13 +27,23 @@ const createProjectList = () => {
     return projectToFind;
   }
 
+  const exportData = () => {
+    let listToExport = [];
+    _list.forEach( project => listToExport.push(project.exportData()) );
+    return listToExport;
+  }
+
   return {
     get list() {
       return _list;
     },
+    set list(value) {
+      _list = value;
+    },
     addProject,
     removeProjectWithName,
-    getProjectWithName
+    getProjectWithName,
+    exportData
   };
 }
 

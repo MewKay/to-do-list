@@ -23,6 +23,16 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
     pubSub.publish(Events.TO_DO_LIST_UPDATE);
   }
 
+  const exportData = () => {
+    return {
+      title,
+      description: _description,
+      dueDate,
+      priority,
+      completionCheck: _taskDone
+    }
+  }
+
   return {
     get title() {
       return title;
@@ -62,7 +72,8 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
       _parentProject = value;
     },
     toggleCompletionStatus,
-    update
+    update,
+    exportData
   }
 }
 

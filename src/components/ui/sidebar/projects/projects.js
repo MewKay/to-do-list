@@ -3,6 +3,7 @@ import { pubSub } from "../../../../pubsub/pubsub";
 import { Events } from "../../../../pubsub/eventsName";
 import { AddProject } from "./addProject/addProject";
 import { createProjectItem } from "./projectItem";
+import { projectList } from "../../../app-logic/projectList";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -21,9 +22,11 @@ const renderProjectList = (list) => {
   projects.appendChild(AddProject().container);
 }
 
-pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);
-
 const projects = createProjectsContainer();
+
+renderProjectList(projectList.list);
+
+pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);
 
 export {
   projects

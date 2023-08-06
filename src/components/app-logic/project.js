@@ -21,6 +21,17 @@ const Project = (name = "Default") => {
     pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
 
+  const exportData = () => {
+    let list = [];
+
+    _toDoList.forEach( toDo => list.push(toDo.exportData()));
+
+    return {
+      name,
+      list 
+    }
+  }
+
   return {
     get list() {
       return _toDoList;
@@ -30,6 +41,7 @@ const Project = (name = "Default") => {
     },
     addToDo,
     removeToDoWithTitle,
+    exportData
   };
 }
 
