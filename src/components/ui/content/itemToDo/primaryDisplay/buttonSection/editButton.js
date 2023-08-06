@@ -10,8 +10,7 @@ const createEditButton = (toDo) => {
   editButton.classList.add("btn-edit");
   editButton.addEventListener("click", () => {
     const modal = Modal(toDo);
-    document.body.appendChild(modal.container);
-    modal.container.showModal();
+    modal.show();
     modal.container.addEventListener("close", () => {
       pubSub.publish(Events.TO_DO_UPDATED, {toDoToUpdate: toDo, newToDo: modal.toDo});
       pubSub.publish(Events.CONTENT_UPDATE, currentContentData);

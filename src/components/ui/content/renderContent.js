@@ -16,8 +16,7 @@ const createAddToDoButton = () => {
   addToDoContainer.classList.add("btn-add-to-do");
   addToDoContainer.addEventListener("click", () => {
     const modal = Modal(ToDo());
-    document.body.appendChild(modal.container);
-    modal.container.showModal();
+    modal.show();
     modal.container.addEventListener("close", () => {
     if (modal.container.returnValue === "confirmed"){ 
       pubSub.publish(Events.TO_DO_ADDED, modal.toDo);

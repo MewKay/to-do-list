@@ -73,6 +73,11 @@ const Modal = (toDo) => {
     document.body.removeChild(_container);
   }
 
+  const show = () => {
+    document.body.appendChild(_container);
+    _container.showModal();
+  } 
+
   _container.addEventListener("close", () => {
     removeModal();
     if(_container.returnValue === "confirmed") _toDo = _form.saveValues();
@@ -88,7 +93,8 @@ const Modal = (toDo) => {
     },
     get toDo() {
       return _toDo;
-    }
+    },
+    show
   };
 }
 
