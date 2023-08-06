@@ -28,7 +28,7 @@ const ItemToDo = (toDo) => {
 
   renderItem();
 
-  pubSub.subscribe(Events.TO_DO_ITEM_CONTENT_UPDATE,renderItem);
+  pubSub.subscribe(Events.TO_DO_ITEM_CONTENT_UPDATE, renderItem);
 
   return {
     get item () {

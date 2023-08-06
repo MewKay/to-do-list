@@ -1,3 +1,5 @@
+import { Events } from "../../pubsub/eventsName";
+import { pubSub } from "../../pubsub/pubsub";
 import { Priority, checkIfPriorityValid } from "../priority";
 import { isValid } from "date-fns";
 
@@ -10,6 +12,15 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
 
   const toggleCompletionStatus = () => {
     _taskDone = !_taskDone;
+  }
+
+  const update = (newToDo) => {
+    title = newToDo.title;
+    _description = newToDo.description;
+    priority = newToDo.priority;
+    dueDate = newToDo.dueDate;
+    
+    pubSub.publish(Events.TO_DO_LIST_UPDATE);
   }
 
   return {
@@ -50,7 +61,8 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
     set parentProject(value) {
       _parentProject = value;
     },
-    toggleCompletionStatus
+    toggleCompletionStatus,
+    update
   }
 }
 

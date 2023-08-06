@@ -30,4 +30,8 @@ pubSub.subscribe(Events.TO_DO_ADDED, (data) => {
   project.addToDo(data);
 });
 
+pubSub.subscribe(Events.TO_DO_UPDATED, (data) => {
+  data.toDoToUpdate.update(data.newToDo);
+});
+
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);

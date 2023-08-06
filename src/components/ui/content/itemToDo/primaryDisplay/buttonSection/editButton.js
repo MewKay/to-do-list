@@ -13,20 +13,11 @@ const createEditButton = (toDo) => {
     document.body.appendChild(modal.container);
     modal.container.showModal();
     modal.container.addEventListener("close", () => {
-      updateToDo(toDo,modal.toDo);
+      pubSub.publish(Events.TO_DO_UPDATED, {toDoToUpdate: toDo, newToDo: modal.toDo});
       pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
     });
   })
   return editButton;
-}
-
-const updateToDo = (initialToDo, newToDo) => {
-  initialToDo.title = newToDo.title;
-  initialToDo.description = newToDo.description;
-  initialToDo.priority = newToDo.priority;
-  initialToDo.dueDate = newToDo.dueDate;
-  
-  pubSub.publish(Events.TO_DO_LIST_UPDATE);
 }
 
 const addEditButton = (container,toDo) => {
