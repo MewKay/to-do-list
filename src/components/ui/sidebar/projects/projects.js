@@ -4,6 +4,7 @@ import { projectContentData } from "../../../data/projectContent";
 import { Events } from "../../../../pubsub/eventsName";
 import { createIcon } from "../../createIcon";
 import { AddProject } from "./addProject";
+import { deleteProject } from "./deleteProject";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
@@ -29,6 +30,7 @@ const renderProjectList = (list) => {
       })
 
       projects.appendChild(div);
+      projects.appendChild(deleteProject());
     }
   });
 
