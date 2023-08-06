@@ -24,6 +24,10 @@ const AddProject = () => {
     pubSub.publish(Events.PROJECT_ADDED, Project(_input.text.value));
   })
 
+  _input.cancelButton.addEventListener("click", () => {
+    renderAddProject(_button);
+  })
+
   renderAddProject(_button);
 
   return {

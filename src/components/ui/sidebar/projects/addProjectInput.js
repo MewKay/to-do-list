@@ -6,7 +6,8 @@ const inputSection = () => {
   const input = createContainer("input");
   input.type = "text";
   input.required = true;
-  input.size = "20"
+  input.size = "20";
+  input.maxLength = "20";
   return input;
 }
 
@@ -15,6 +16,9 @@ const ButtonSection = () => {
   const cancelButton = createCancelButton();
 
   const container = createContainer("div", confirmButton, cancelButton);
+
+  cancelButton.type = "reset";
+  
   return {
     get container() {
       return container;
