@@ -15,11 +15,14 @@ document.body.appendChild(content);
 
 addDummyContent();
 
+pubSub.subscribe(Events.PROJECT_ADDED, projectList.addProject);
+
+pubSub.subscribe(Events.PROJECT_DELETED, projectList.removeProjectWithName);
+
 pubSub.subscribe(Events.TO_DO_DELETED, data => {
   let project = projectList.getProjectWithName(data.projectName);
   project.removeToDoWithTitle(data.toDoTitle);
 });
 
-pubSub.subscribe(Events.PROJECT_ADDED, projectList.addProject);
 
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);

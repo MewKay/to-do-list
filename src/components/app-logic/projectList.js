@@ -13,6 +13,7 @@ const createProjectList = () => {
     ProjectName.forEach( name => {
       _list = _list.filter( project => project.name !== name);
     });
+    pubSub.publish(Events.PROJECT_LIST_UPDATE,_list);
   } 
 
   const getProjectWithName = (ProjectName) => {

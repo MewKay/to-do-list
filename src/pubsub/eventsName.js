@@ -1,6 +1,7 @@
 const Events = Object.freeze({
   PROJECT_LIST_UPDATE: "projectListUpdated",
-  PROJECT_ADDED: "projectAdde",
+  PROJECT_ADDED: "projectAdd",
+  PROJECT_DELETED: "projectDelete",
   TO_DO_LIST_UPDATE: "toDoListUpdated",
   TO_DO_DELETED: "toDoDelete",
   CONTENT_UPDATE: "contentUpdated",

@@ -22,7 +22,7 @@ const renderProjectList = (list) => {
       const projectTitle = createContainer("p");
       projectTitle.innerText = element.name;
 
-      const div = createContainer("div", createIcon("lists"), projectTitle);
+      const div = createContainer("div", createIcon("lists"), projectTitle, deleteProject());
       div.classList.add("nav-item");
 
       div.addEventListener("click", () => {
@@ -30,7 +30,6 @@ const renderProjectList = (list) => {
       })
 
       projects.appendChild(div);
-      projects.appendChild(deleteProject());
     }
   });
 
