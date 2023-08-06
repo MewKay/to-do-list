@@ -18,7 +18,7 @@ const buttonSection = () => {
 }
 
 const addProjectInput = () => {
-  const container = createContainer("div", inputSection(), buttonSection());
+  const container = createContainer("form", inputSection(), buttonSection());
   return container;
 }
 
