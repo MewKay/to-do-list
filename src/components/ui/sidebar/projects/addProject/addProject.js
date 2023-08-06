@@ -1,7 +1,7 @@
-import { Events } from "../../../../pubsub/eventsName";
-import { pubSub } from "../../../../pubsub/pubsub";
-import { Project } from "../../../app-logic/project";
-import { createContainer } from "../../createContainer"
+import { Events } from "../../../../../pubsub/eventsName";
+import { pubSub } from "../../../../../pubsub/pubsub";
+import { Project } from "../../../../app-logic/project";
+import { createContainer } from "../../../createContainer"
 import { addProjectButton } from "./addProjectButton";
 import { AddProjectInput } from "./addProjectInput";
 

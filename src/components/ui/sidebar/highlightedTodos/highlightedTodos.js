@@ -16,9 +16,7 @@ const createList = () => {
 
 const createhighlightedTodoContainer = () => {
   const container = createContainer("div", createList());
-
   container.id = "highlighted-todos";
-  
   return container;
 } 
 

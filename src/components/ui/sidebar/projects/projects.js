@@ -1,40 +1,24 @@
 import { createContainer } from "../../createContainer";
 import { pubSub } from "../../../../pubsub/pubsub";
-import { projectContentData } from "../../../data/projectContent";
 import { Events } from "../../../../pubsub/eventsName";
-import { createIcon } from "../../createIcon";
-import { AddProject } from "./addProject";
-import { deleteProject } from "./deleteProject";
+import { AddProject } from "./addProject/addProject";
+import { createProjectItem } from "./projectItem";
 
 const createProjectsContainer = () => {
   const container = createContainer("div");
-
   container.id = "projects";
-
   return container;
 }
 
 const renderProjectList = (list) => {
   projects.innerText = "";
 
-  list.forEach( element => {
-    if(element.name !== "Inbox"){
-      const projectTitle = createContainer("p");
-      projectTitle.innerText = element.name;
-
-      const div = createContainer("div", createIcon("lists"), projectTitle, deleteProject());
-      div.classList.add("nav-item");
-
-      div.addEventListener("click", () => {
-        pubSub.publish(Events.CONTENT_UPDATE, projectContentData(element));
-      })
-
-      projects.appendChild(div);
-    }
+  list.forEach( project => {
+    if(project.name !== "Inbox") 
+      projects.appendChild(createProjectItem(project));
   });
 
-  const addProject = AddProject();
-  projects.appendChild(addProject.container);
+  projects.appendChild(AddProject().container);
 }
 
 pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);

@@ -12,11 +12,15 @@ const createEditButton = (toDo) => {
     const modal = Modal(toDo);
     modal.show();
     modal.container.addEventListener("close", () => {
-      pubSub.publish(Events.TO_DO_UPDATED, {toDoToUpdate: toDo, newToDo: modal.toDo});
-      pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
+      updateToDo(toDo, modal.toDo);
     });
-  })
+  });
   return editButton;
+}
+
+const updateToDo = (oldToDo, newToDo) => {
+  pubSub.publish(Events.TO_DO_UPDATED, {toDoToUpdate: oldToDo, newToDo: newToDo});
+  pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
 }
 
 const addEditButton = (container,toDo) => {

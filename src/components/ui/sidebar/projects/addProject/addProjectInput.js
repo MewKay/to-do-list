@@ -1,6 +1,6 @@
-import { createCancelButton } from "../../buttons/cancelButton";
-import { createConfirmButton } from "../../buttons/confirmButton";
-import { createContainer } from "../../createContainer"
+import { createCancelButton } from "../../../buttons/cancelButton";
+import { createConfirmButton } from "../../../buttons/confirmButton";
+import { createContainer } from "../../../createContainer"
 
 const inputSection = () => {
   const input = createContainer("input");

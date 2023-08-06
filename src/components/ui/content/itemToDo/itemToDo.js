@@ -1,7 +1,7 @@
 import { Events } from "../../../../pubsub/eventsName";
 import { pubSub } from "../../../../pubsub/pubsub";
 import { createContainer } from "../../createContainer";
-import { createDetailsSection } from "./detailsSection";
+import { createDetailsSection } from "./detailsSection/detailsSection";
 import { PrimaryDisplay } from "./primaryDisplay/primaryDisplay";
 
 const ItemToDo = (toDo) => {
@@ -31,7 +31,7 @@ const ItemToDo = (toDo) => {
   pubSub.subscribe(Events.TO_DO_ITEM_CONTENT_UPDATE, renderItem);
 
   return {
-    get item () {
+    get container () {
       return _container;
     }
   };

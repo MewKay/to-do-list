@@ -9,13 +9,16 @@ const deleteProject = () => {
 
   button.addEventListener("click", (event) => {
     event.stopPropagation();
-    const projectNameToDelete = button.closest(".nav-item").children[1].innerText;
-    pubSub.publish(Events.PROJECT_DELETED, projectNameToDelete);
-
+    deleteClosestProjectToButton(button);
     returnContentToInbox();
   });
 
   return button;
+}
+
+const deleteClosestProjectToButton = (button) => {
+  const projectNameToDelete = button.closest(".nav-item").children[1].innerText;
+  pubSub.publish(Events.PROJECT_DELETED, projectNameToDelete);
 }
 
 const returnContentToInbox = () => {
