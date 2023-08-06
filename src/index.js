@@ -20,5 +20,6 @@ pubSub.subscribe(Events.TO_DO_DELETED, data => {
   project.removeToDoWithTitle(data.toDoTitle);
 });
 
+pubSub.subscribe(Events.PROJECT_ADDED, projectList.addProject);
 
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);

@@ -5,6 +5,7 @@ import { createContainer } from "../../createContainer"
 const inputSection = () => {
   const input = createContainer("input");
   input.type = "text";
+  input.required = true;
   input.size = "20"
   return input;
 }
@@ -35,6 +36,15 @@ const AddProjectInput = () => {
   return {
     get container() {
       return _container;
+    },
+    get text() {
+      return _input;
+    },
+    get confirmButton() {
+      return _buttons.confirm;
+    },
+    get cancelButton() {
+      return _buttons.cancel;
     }
   };
 }
