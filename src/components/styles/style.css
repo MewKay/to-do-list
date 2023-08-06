@@ -76,6 +76,10 @@ header {
   align-items: center;
 }
 
+#projects .btn-delete {
+  margin-left: auto;
+}
+
 /* --- Content --- */ 
 
 main {
@@ -293,6 +297,16 @@ header .material-symbols-sharp {
 
 #projects .material-symbols-sharp {
   font-size: 1rem;
+}
+
+#projects .btn-delete {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#projects .btn-delete .material-symbols-sharp {
+  font-size: 1.2rem;
+  color: var(--text);
 }
 
 #projects p {
