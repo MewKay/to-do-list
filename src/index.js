@@ -8,6 +8,7 @@ import { pubSub } from "./pubsub/pubsub";
 import { Events } from "./pubsub/eventsName";
 import { inboxContentData } from "./components/data/inboxContent";
 import { projectList } from "./components/app-logic/projectList";
+import { currentContentData } from "./components/data/currentData";
 
 document.body.appendChild(header);
 document.body.appendChild(sidebar);
@@ -24,5 +25,9 @@ pubSub.subscribe(Events.TO_DO_DELETED, data => {
   project.removeToDoWithTitle(data.toDoTitle);
 });
 
+pubSub.subscribe(Events.TO_DO_ADDED, (data) => {
+  let project = projectList.getProjectWithName(currentContentData.title);
+  project.addToDo(data);
+});
 
 pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);

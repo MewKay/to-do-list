@@ -20,8 +20,7 @@ const createAddToDoButton = () => {
     modal.container.showModal();
     modal.container.addEventListener("close", () => {
     if (modal.container.returnValue === "confirmed"){ 
-      let project = projectList.getProjectWithName(currentContentData.title);
-      project.addToDo(modal.toDo);
+      pubSub.publish(Events.TO_DO_ADDED, modal.toDo);
       pubSub.publish(Events.CONTENT_UPDATE, currentContentData);
     }})
   }) 
