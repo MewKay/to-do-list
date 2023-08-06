@@ -9,19 +9,36 @@ const inputSection = () => {
   return input;
 }
 
-const buttonSection = () => {
+const ButtonSection = () => {
   const confirmButton = createConfirmButton();
   const cancelButton = createCancelButton();
 
   const container = createContainer("div", confirmButton, cancelButton);
-  return container;
+  return {
+    get container() {
+      return container;
+    },
+    get confirm() {
+      return confirmButton;
+    },
+    get cancel() {
+      return cancelButton;
+    }
+  };
 }
 
-const addProjectInput = () => {
-  const container = createContainer("form", inputSection(), buttonSection());
-  return container;
+const AddProjectInput = () => {
+  const _input = inputSection();
+  const _buttons = ButtonSection(); 
+  const _container = createContainer("form", _input, _buttons.container);
+
+  return {
+    get container() {
+      return _container;
+    }
+  };
 }
 
 export {
-  addProjectInput
+  AddProjectInput
 }

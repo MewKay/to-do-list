@@ -1,11 +1,11 @@
 import { createContainer } from "../../createContainer"
 import { addProjectButton } from "./addProjectButton";
-import { addProjectInput } from "./addProjectInput";
+import { AddProjectInput } from "./addProjectInput";
 
 const AddProject = () => {
   const _container = createContainer("div");
   const _button = addProjectButton();
-  const _input = addProjectInput();
+  const _input = AddProjectInput();
 
   const renderAddProject = (container) => {
     _container.innerText = "";
@@ -13,7 +13,7 @@ const AddProject = () => {
   }
 
   _button.addEventListener("click", () => {
-    renderAddProject(_input);
+    renderAddProject(_input.container);
   });
 
   renderAddProject(_button);
