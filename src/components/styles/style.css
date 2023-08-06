@@ -80,6 +80,17 @@ header {
   margin-left: auto;
 }
 
+.add-project-container {
+  padding-top: .4rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#projects .btn-add-project {
+  display: flex;
+  align-items: center;
+}
+
 /* --- Content --- */ 
 
 main {
@@ -312,6 +323,20 @@ header .material-symbols-sharp {
 #projects p {
   font-size: .9rem;
 } 
+
+#projects .btn-add-project {
+  color: var(--text);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+#projects .btn-add-project p {
+  font-size: 1.1rem;
+}
+
+#projects .btn-add-project .material-symbols-sharp {
+  font-size: 1.3rem;
+}
 
 /* --- Content --- */
 

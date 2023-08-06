@@ -10,6 +10,8 @@ const AddProject = () => {
   const _button = addProjectButton();
   const _input = AddProjectInput();
 
+  _container.classList.add("add-project-container");
+
   const renderAddProject = (container) => {
     _container.innerText = "";
     _container.appendChild(container);
