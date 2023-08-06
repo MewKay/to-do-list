@@ -86,6 +86,21 @@ header {
   justify-content: flex-start;
 }
 
+.add-project-container form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.add-project-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-project-buttons button {
+  padding: .2em .6em;
+}
+
 #projects .btn-add-project {
   display: flex;
   align-items: center;
@@ -336,6 +351,26 @@ header .material-symbols-sharp {
 
 #projects .btn-add-project .material-symbols-sharp {
   font-size: 1.3rem;
+}
+
+.add-project-buttons .btn-confirm,
+.add-project-buttons .btn-cancel {
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+}
+
+.add-project-buttons .btn-confirm {
+  background-color: var(--primary);
+}
+
+.add-project-buttons .btn-cancel {
+  background-color: var(--accent);
+}
+
+#projects .btn-confirm .material-symbols-sharp,
+#projects .btn-cancel .material-symbols-sharp {
+  font-size: 1.2rem;
 }
 
 /* --- Content --- */

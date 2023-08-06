@@ -6,28 +6,30 @@ const inputSection = () => {
   const input = createContainer("input");
   input.type = "text";
   input.required = true;
-  input.size = "20";
+  input.size = "15";
   input.maxLength = "20";
+  input.classList.add("add-project-input");
   return input;
 }
 
 const ButtonSection = () => {
-  const confirmButton = createConfirmButton();
-  const cancelButton = createCancelButton();
+  const _confirmButton = createConfirmButton();
+  const _cancelButton = createCancelButton();
 
-  const container = createContainer("div", confirmButton, cancelButton);
+  const _container = createContainer("div", _confirmButton, _cancelButton);
+  _container.classList.add("add-project-buttons");
 
-  cancelButton.type = "reset";
+  _cancelButton.type = "reset";
   
   return {
     get container() {
-      return container;
+      return _container;
     },
     get confirm() {
-      return confirmButton;
+      return _confirmButton;
     },
     get cancel() {
-      return cancelButton;
+      return _cancelButton;
     }
   };
 }
