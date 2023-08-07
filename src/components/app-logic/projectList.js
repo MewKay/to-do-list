@@ -5,8 +5,13 @@ import { Project } from "./project";
 const createProjectList = () => {
   let _list = [];
   
-  const addProject = (...Project) => {
-    _list.push(...Project);
+  const addProject = (project) => {
+    if(isProjectIncluded(project.name)) {
+      console.log(isProjectIncluded(project.name));
+      alert("This project name is already used. Please try again.");
+      return;
+    }
+    _list.push(project);
     pubSub.publish(Events.PROJECT_LIST_UPDATE,_list);
   }
 
@@ -18,13 +23,19 @@ const createProjectList = () => {
   } 
 
   const getProjectWithName = (ProjectName) => {
-    let projectToFind;
+    let projectToFind = null;
     _list.forEach( project => {
       if(project.name === ProjectName) 
         projectToFind = project;
     });
     return projectToFind;
   }
+
+  const isProjectIncluded = (ProjectName) => {
+    if(!getProjectWithName(ProjectName))
+      return false;
+    return true;
+  } 
 
   const exportData = () => {
     let listToExport = [];

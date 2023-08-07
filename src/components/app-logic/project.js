@@ -5,13 +5,13 @@ import { ToDo } from "./todo";
 const Project = (name = "Default") => {
   let _toDoList = [];
 
-  const addToDo = (...toDos) => {
-    toDos.forEach( toDo => {
-      if(_toDoList.includes(toDo)) 
-        return alert("A task with the same name has already been added.");
-      toDo.parentProject = name;
-      _toDoList.push(toDo);
-    });
+  const addToDo = (toDo) => {
+    if(isToDoIncluded(toDo.title)) {
+      alert("This task name is already used. Please try again.");
+      return;
+    }
+    toDo.parentProject = name;
+    _toDoList.push(toDo);
     pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
   }
   
@@ -20,6 +20,16 @@ const Project = (name = "Default") => {
       _toDoList = _toDoList.filter(toDo => toDo.title !== toDoTitleToRemove);
     });
     pubSub.publish(Events.TO_DO_LIST_UPDATE,_toDoList);
+  }
+
+  const isToDoIncluded = (toDoTitle) => {
+    let isIncluded = false;
+    _toDoList.forEach((toDo) => {
+      if (toDo.title === toDoTitle) {
+        isIncluded = true;
+      }
+    });
+    return isIncluded;
   }
 
   const exportData = () => {
