@@ -1,5 +1,6 @@
 import { Events } from "../../pubsub/eventsName";
 import { pubSub } from "../../pubsub/pubsub";
+import { ToDo } from "./todo";
 
 const Project = (name = "Default") => {
   let _toDoList = [];
@@ -32,6 +33,16 @@ const Project = (name = "Default") => {
     }
   }
 
+  const importData = (projectData) => {
+    name = projectData.name;
+    _toDoList = [];
+    projectData.list.forEach( toDoData => {
+      const toDo = ToDo();
+      toDo.importData(toDoData);
+      _toDoList.push(toDo);
+    });
+  }
+
   return {
     get list() {
       return _toDoList;
@@ -41,7 +52,8 @@ const Project = (name = "Default") => {
     },
     addToDo,
     removeToDoWithTitle,
-    exportData
+    exportData,
+    importData
   };
 }
 

@@ -3,7 +3,7 @@ import { Events } from "./pubsub/eventsName";
 import { projectList } from "./components/app-logic/projectList";
 import { currentContentData } from "./components/data/currentData";
 
-const subscribeAll = () => {
+const subscribeCRUD = () => {
   pubSub.subscribe(Events.PROJECT_ADDED, projectList.addProject);
 
   pubSub.subscribe(Events.PROJECT_DELETED, projectList.removeProjectWithName);
@@ -23,6 +23,19 @@ const subscribeAll = () => {
   });
 }
 
+const subscribeSaveToLocalStorage = () => {
+  pubSub.subscribe(Events.PROJECT_LIST_UPDATE, saveToLocalStorage);
+  pubSub.subscribe(Events.TO_DO_LIST_UPDATE, saveToLocalStorage);
+  pubSub.subscribe(Events.TO_DO_UPDATED, saveToLocalStorage);
+}
+
+const saveToLocalStorage = () => {
+  localStorage.setItem("project_list", JSON.stringify(projectList.exportData()));
+  console.log("Data saved!!");
+  console.log(JSON.parse(localStorage.getItem("project_list")));
+}
+
 export {
-  subscribeAll
+  subscribeCRUD,
+  subscribeSaveToLocalStorage
 }

@@ -1,7 +1,7 @@
 import { Events } from "../../pubsub/eventsName";
 import { pubSub } from "../../pubsub/pubsub";
 import { Priority, checkIfPriorityValid } from "../priority";
-import { isValid } from "date-fns";
+import { isValid, parseJSON } from "date-fns";
 
 const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
   let _description = "";
@@ -29,8 +29,18 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
       description: _description,
       dueDate,
       priority,
-      completionCheck: _taskDone
+      completionCheck: _taskDone,
+      parentProject: _parentProject
     }
+  }
+
+  const importData = (toDoData) => {
+    title = toDoData.title;
+    _description = toDoData.description;
+    dueDate = parseJSON(toDoData.dueDate);
+    priority = toDoData.priority;
+    _taskDone = toDoData.completionCheck;
+    _parentProject = toDoData.parentProject;
   }
 
   return {
@@ -73,7 +83,8 @@ const ToDo = (title = "", dueDate = new Date(), priority = Priority.LOW) => {
     },
     toggleCompletionStatus,
     update,
-    exportData
+    exportData,
+    importData
   }
 }
 
