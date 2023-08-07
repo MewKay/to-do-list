@@ -5,7 +5,7 @@ import { projectContentData } from "./projectContent";
 const inboxProject = Project("Inbox");
 projectList.addProject(inboxProject);
 
-const inboxContentData = () => projectContentData(inboxProject)
+const inboxContentData = () => projectContentData(projectList.list[0]);
 
 export {
   inboxContentData
