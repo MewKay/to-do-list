@@ -342,7 +342,12 @@ header .material-symbols-sharp {
 #projects .btn-add-project {
   color: var(--text);
   background-color: rgba(0, 0, 0, 0);
-  border: none;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+}
+
+#projects .btn-add-project:hover {
+  border-color: var(--text);
 }
 
 #projects .btn-add-project p {
