@@ -24,8 +24,6 @@ const renderProjectList = (list) => {
 
 const projects = createProjectsContainer();
 
-renderProjectList(projectList.list);
-
 pubSub.subscribe(Events.PROJECT_LIST_UPDATE, renderProjectList);
 
 export {
