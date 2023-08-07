@@ -12,7 +12,7 @@ import { projectList } from "./components/app-logic/projectList";
 document.addEventListener("DOMContentLoaded", () => {
   projectList.importData(JSON.parse(localStorage.getItem("project_list")));
   pubSub.publish(Events.PROJECT_LIST_UPDATE, projectList.list);
-  pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
+  pubSub.publish(Events.CONTENT_UPDATE, inboxContentData());
 })
 
 document.body.appendChild(header);

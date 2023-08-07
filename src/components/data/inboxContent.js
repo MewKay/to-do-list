@@ -1,24 +1,12 @@
-import { Events } from "../../pubsub/eventsName";
-import { pubSub } from "../../pubsub/pubsub";
 import { Project } from "../app-logic/project";
 import { projectList } from "../app-logic/projectList";
-import { ContentData } from "./contentData";
+import { projectContentData } from "./projectContent";
 
 const inboxProject = Project("Inbox");
-
-const inboxContentData = ContentData(inboxProject.name,[]);
-
-const inboxToDoList = () => {
-  const listToDo = [];
-  inboxProject.list.forEach( toDo => listToDo.push(toDo));
-  inboxContentData.toDoList = listToDo;
-}
-
-pubSub.subscribe(Events.TO_DO_LIST_UPDATE, inboxToDoList);
-
 projectList.addProject(inboxProject);
 
+const inboxContentData = () => projectContentData(inboxProject)
+
 export {
-  inboxContentData,
-  inboxProject
+  inboxContentData
 }

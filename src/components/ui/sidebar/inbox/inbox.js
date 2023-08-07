@@ -19,7 +19,7 @@ const createInboxContainer = () => {
   container.classList.add("selected");
   
   container.addEventListener("click", () => {
-    pubSub.publish(Events.CONTENT_UPDATE, inboxContentData);
+    pubSub.publish(Events.CONTENT_UPDATE, inboxContentData());
   })
 
   return container;
