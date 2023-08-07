@@ -19,8 +19,6 @@ const createSidebar = () => {
 
 const sidebar = createSidebar();
 
-pubSub.subscribe(Events.PROJECT_LIST_UPDATE, addClassSelected); 
-
 export {
   sidebar
 };
